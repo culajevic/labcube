@@ -1,0 +1,6 @@
+*.img
+*.svg
+*.txt
+/production
+/node_modules
+package.json
