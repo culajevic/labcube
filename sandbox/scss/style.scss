@@ -1,1 +1,114 @@
 @import 'variables.scss';
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&subset=latin-ext');
+@import 'functions.scss';
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* HEADER SECTION
+**********************************/
+
+#header {
+  display:flex;
+  flex-direction:column;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 501px; //50vh
+	background: radial-gradient(circle, $secondary-color 0%, $primary-color 100%);
+    .navbar-nav{
+      a {
+        padding-right: px-to-rem(16px);
+      }
+    }
+    .container {
+      margin-bottom: auto;
+    }
+}
+
+/* NAVIGATION MENU
+**********************************/
+
+.logoFull {
+  align-self: center;
+  position:absolute;
+}
+
+.fa-map-marker-alt,
+.fa-user,
+.fa-comments {
+  padding-right: px-to-rem(9px);
+}
+
+.navbar {
+  padding-left:0;
+  padding-right: 0;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #fff;
+}
+
+/* SEARCH AREA
+**************************************************/
+
+//search field size
+.search {
+  position:relative;
+  height: px-to-rem(50px);
+}
+
+.searchFieldContainer {
+  @extend .logoFull;
+  margin-top: px-to-rem(105px);
+}
+
+//disable radio buttons
+input[name="searchFilter"] {
+  display: none;
+  &:checked + label {
+    font-weight:bold;
+    color:$primary-color;
+    opacity: 1;
+  }
+  &+label {
+    opacity: 0.5;
+  }
+}
+
+.searchHelperClass {
+  position: absolute;
+  top:0;
+  color:$primary-color;
+  line-height: px-to-rem(53px);
+  text-transform: uppercase;
+  font-weight: 500;
+    &:hover {
+      cursor: pointer;
+      color:$secondary-color;
+    }
+}
+
+.analizeSearchFilter {
+  @extend .searchHelperClass;
+  right: px-to-rem(145px);
+  &::after {
+    content:" | ";
+    color:$primary-color;
+    padding-left: px-to-rem(3px);
+  }
+}
+
+.laboratorijeSearchFilter {
+  @extend .searchHelperClass;
+  right: px-to-rem(25px);
+  padding-left: px-to-rem(3px);
+  opacity: 0.5;
+}
+
+
+@import 'media.scss';

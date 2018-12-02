@@ -1,0 +1,32 @@
+
+// @media screen and (max-width: 576px) {}
+
+// Medium devices (tablets, 768px and up)
+@media (max-width: 768px) {
+  .analizeSearchFilter,
+  .laboratorijeSearchFilter  {
+    font-size: .8rem;
+  }
+  .analizeSearchFilter {
+    right:px-to-rem(120px);
+  }
+}
+
+@media (max-width: 529px) {
+  .analizeSearchFilter,
+  .laboratorijeSearchFilter {
+    font-size: px-to-rem(9px);
+  }
+  .search::placeholder {
+  font-size: px-to-rem(10px);
+  }
+  .analizeSearchFilter {
+    right:px-to-rem(92px);
+  }
+}
+
+// Large devices (desktops, 992px and up)
+// @media (min-width: 992px) { ... }
+
+// Extra large devices (large desktops, 1200px and up)
+// @media (min-width: 1200px) { ... }

@@ -1,0 +1,4 @@
+// calculating rem out of px
+@function px-to-rem($target, $default:16px) {
+  @return ($target/$default) * 1rem;
+}
