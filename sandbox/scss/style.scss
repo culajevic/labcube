@@ -59,14 +59,14 @@ body {
 **************************************************/
 
 .searchFieldContainer {
-  position:relative;
   @extend .logoFull;
-  margin-top: px-to-rem(150px);
+  // margin-top: px-to-rem(150px);
+  margin-top: 105px;
 }
 
 //search field size
 .search {
-  // position:relative;
+  position:relative;
   height: px-to-rem(50px);
   // margin-top: 195px;
 }
