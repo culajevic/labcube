@@ -2,10 +2,12 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&subset=latin-ext');
 @import 'functions.scss';
 
-
-body {
+* {
   margin: 0;
   padding: 0;
+}
+
+body {
   font-family: 'Roboto', sans-serif;
 }
 
@@ -56,16 +58,20 @@ body {
 /* SEARCH AREA
 **************************************************/
 
-//search field size
-.search {
+.searchFieldContainer {
   position:relative;
-  height: px-to-rem(50px);
+  @extend .logoFull;
+  margin-top: px-to-rem(150px);
 }
 
-.searchFieldContainer {
-  @extend .logoFull;
-  margin-top: px-to-rem(105px);
+//search field size
+.search {
+  // position:relative;
+  height: px-to-rem(50px);
+  // margin-top: 195px;
 }
+
+
 
 //disable radio buttons
 input[name="searchFilter"] {
@@ -109,6 +115,79 @@ input[name="searchFilter"] {
   padding-left: px-to-rem(3px);
   opacity: 0.5;
 }
+
+/*LAB ANALYSIS GROUPS
+*********************************************/
+
+.analysisContainer {
+  margin-top: px-to-rem(50px);
+}
+
+.card {
+margin-bottom: 30px;
+  &-body {
+    display: flex;
+    flex-direction: column;
+    align-items:stretch;
+  }
+}
+
+// group icon and title
+.analysisIcon {
+  float:left;
+  padding-right:px-to-rem(23px);
+  + span {
+    font-weight: 500;
+    min-height: 47px;
+    // opacity: 0.8;
+    line-height: px-to-rem(40px); //// TODO: da li je bolje da bude uz gornju ivicu uli na sredini proveriti
+    }
+  }
+
+// group description
+  .card-text {
+    flex-grow:1;
+    border-top: 1px solid $line-color;
+    clear:both;
+    padding-top: 9px;
+    margin-top: 6px;
+    font-size: px-to-rem(14px);
+    opacity: 0.8;
+  }
+
+  .btn-secondary {
+    background-color: rgba(215,215,215,0.3);
+    border:none;
+    color: $buton-secondary-color;
+    font-size: px-to-rem(13px);
+    &:hover{
+      background-color: $primary-color;
+      color:$white-color;
+    }
+  }
+
+  .clickMore {
+    position:relative;
+    height:40px;
+  }
+
+  .analysisNumber {
+    position:absolute;
+    right: 0;
+    top:0;
+    box-sizing: border-box;
+    padding: 11px;
+    font-weight: 500;
+    font-size: 12px;
+    background-color: rgba(215,215,215,0.3);
+    border-radius:5px;
+    color:#000;
+  }
+
+  .analysisNumberHover {
+    color:white;
+  }
+
 
 
 @import 'media.scss';
