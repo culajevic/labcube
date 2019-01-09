@@ -1,7 +1,23 @@
 
-// @media screen and (max-width: 576px) {}
+// Large devices (desktops, 992px and up) MD
+@media (max-width: 992px) {
+  footer {
+    height: 320px;
+      & > .overlay {
+      height: 320px;
+    }
+  }
 
-// Medium devices (tablets, 768px and up)
+  .linksFooter {
+    margin:0 auto;
+    & li {
+      float:left;
+      margin-right: px-to-rem(16px);
+    }
+  }
+}
+
+// Medium devices (tablets, 768px and down) SM
 @media (max-width: 768px) {
   .analizeSearchFilter,
   .laboratorijeSearchFilter  {
@@ -12,21 +28,15 @@
   }
 }
 
-@media (max-width: 529px) {
-  .analizeSearchFilter,
-  .laboratorijeSearchFilter {
-    font-size: px-to-rem(9px);
-  }
-  .search::placeholder {
-  font-size: px-to-rem(10px);
-  }
-  .analizeSearchFilter {
-    right:px-to-rem(92px);
-  }
-}
 
-// Large devices (desktops, 992px and up)
-// @media (min-width: 992px) { ... }
+
+// XS and down
+@media (max-width: 575px) {
+
+  }
+
+
+
 
 // Extra large devices (large desktops, 1200px and up)
 // @media (min-width: 1200px) { ... }

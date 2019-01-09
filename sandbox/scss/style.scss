@@ -9,6 +9,15 @@
 
 body {
   font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+}
+
+a:hover,
+a:focus,
+a:active,
+a:visited,
+a:link{
+    text-decoration: none;
 }
 
 /* HEADER SECTION
@@ -20,7 +29,7 @@ body {
   justify-content: center;
   position: relative;
   width: 100%;
-  height: 501px; //50vh
+  height: 501px;
 	background: radial-gradient(circle, $secondary-color 0%, $primary-color 100%);
     .navbar-nav{
       a {
@@ -46,13 +55,22 @@ body {
   padding-right: px-to-rem(9px);
 }
 
-.navbar {
-  padding-left:0;
-  padding-right: 0;
+.navbar-dark .navbar-nav .nav-link {
+    color: $white-color;
 }
 
-.navbar-dark .navbar-nav .nav-link {
-    color: #fff;
+.fixed-top-background {
+  	background: radial-gradient(circle, $secondary-color 0%, $primary-color 100%);
+    animation-name: navanimation;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes  navanimation {
+  0% {opacity: 0.1;}
+  50% {opacity: 0.5;}
+  100% {opacity: 0.9;}
 }
 
 /* SEARCH AREA
@@ -60,18 +78,53 @@ body {
 
 .searchFieldContainer {
   @extend .logoFull;
-  // margin-top: px-to-rem(150px);
-  margin-top: 105px;
+  margin-top: px-to-rem(147px); // put to 155 when button is inserted
+  // margin-top: 105px;
 }
 
 //search field size
 .search {
   position:relative;
   height: px-to-rem(50px);
-  // margin-top: 195px;
 }
 
 
+
+.fa-play-circle {
+  font-size: 38px;
+  color:white;
+  position: absolute;
+  top:6px;
+  left: 214px;
+}
+
+.btn-outline-warning {
+  color:$white-color;
+  border-color:$white-color;
+  font-size: px-to-rem(22px);
+  padding-right: 64px;
+  &:active {
+    color:$white-color;
+    border-color:$white-color;
+    border:1px solid $button-green !important;
+    background-color: $button-green !important;
+  }
+  &:focus {
+    color:$white-color !important;
+    box-shadow: rgba(85,209,89,0.4) 0px 0px 0px 0px !important;
+  }
+
+  &:hover {
+    color:$white-color;
+    background-color: $button-green;
+    border-color:$button-green;
+  }
+}
+
+.labCubeDemoBtn {
+  margin-top: 34px;
+  position:relative;
+}
 
 //disable radio buttons
 input[name="searchFilter"] {
@@ -116,9 +169,11 @@ input[name="searchFilter"] {
   opacity: 0.5;
 }
 
+
+
+
 /*LAB ANALYSIS GROUPS
 *********************************************/
-
 .analysisContainer {
   margin-top: px-to-rem(50px);
 }
@@ -138,9 +193,7 @@ margin-bottom: 30px;
   padding-right:px-to-rem(23px);
   + span {
     font-weight: 500;
-    min-height: 47px;
-    // opacity: 0.8;
-    line-height: px-to-rem(40px); //// TODO: da li je bolje da bude uz gornju ivicu uli na sredini proveriti
+    line-height: px-to-rem(40px);
     }
   }
 
@@ -158,7 +211,7 @@ margin-bottom: 30px;
   .btn-secondary {
     background-color: rgba(215,215,215,0.3);
     border:none;
-    color: $buton-secondary-color;
+    color: $button-grey;
     font-size: px-to-rem(13px);
     &:hover{
       background-color: $primary-color;
@@ -187,6 +240,326 @@ margin-bottom: 30px;
   .analysisNumberHover {
     color:white;
   }
+
+.btn-success {
+  background-color: $button-green;
+  border:none;
+  padding:px-to-rem(11px) px-to-rem(36px);
+  margin-top: px-to-rem(10px);
+  margin-bottom:px-to-rem(60px);
+  line-height: 23px;
+  font-weight: 500;
+}
+
+
+/* GOOGLE MAP
+*//////////////////////////////////////////////
+
+#googleMap {
+  position: relative;
+  width: 100%;
+}
+
+#map {
+  height: 790px;
+}
+
+
+// google map header
+.labinfo  {
+  position:absolute;
+  top:0;
+  left:0;
+  background-color: $primary-color;
+  opacity:0.8;
+  height: px-to-rem(83px);
+  width:100%;
+}
+
+.mapTitle {
+  line-height: px-to-rem(83px);
+  color:$white-color;
+  font-size: px-to-rem(30px);
+}
+
+.labMapInfo {
+  color:$white-color;
+  font-size: px-to-rem(11px);
+  text-transform: uppercase;
+}
+
+// numbers counter
+.num {
+  color:$white-color;
+  opacity: 0;
+}
+.numOn {
+  opacity:1;
+  color:$white-color;
+  font-size: px-to-rem(20px);
+  font-weight: 500;
+}
+
+
+/* google map infowindow
+***************************************************************/
+
+#labInfoWindow {
+  width: px-to-rem(310px);
+  height: px-to-rem(146px);
+  padding-top: px-to-rem(12px);
+  padding-left: px-to-rem(12px);
+}
+
+.labInfoWindowTitle {
+  font-size: 1rem;
+  color:$primary-color;
+  font-weight: 500;
+  line-height: px-to-rem(19px);
+}
+
+.labInfoWindowFooter {
+  background-color: $primary-color;
+  height: px-to-rem(36px);
+  position: absolute;
+  bottom: px-to-rem(17px);
+  left: 0;
+  width: px-to-rem(333px);
+  color:$white-color;
+  padding-left: px-to-rem(12px);
+  border-bottom-left-radius: px-to-rem(4px);
+  & > .radnoVreme {
+    display: inline-block;
+    padding-top: px-to-rem(11px);
+    font-size: px-to-rem(12px);
+    font-weight: 500;
+  }
+  & > .status {
+    display: inline-block;
+    float:right;
+    padding-top: px-to-rem(10px);
+    padding-right: px-to-rem(12px);
+    font-weight: 500;
+    &::before {
+      content:'';
+      width: px-to-rem(10px);
+      height: px-to-rem(10px);
+      border-radius: px-to-rem(20px);
+      background-color: $button-green;
+      float:left;
+      margin-right: px-to-rem(8px);
+      margin-top: px-to-rem(3px);
+    }
+  }
+}
+
+.radnoVremeDetalji {
+  display: block;
+  height: px-to-rem(151px);
+  top:px-to-rem(-115px);
+  right:0;
+  width:px-to-rem(110px);
+  opacity: 0;
+  z-index: -9;
+  transition: .3s linear;
+  background-color: $primary-color;
+  position: absolute;
+  & > p {
+    display: inline-block;
+    line-height: px-to-rem(18px);
+    font-weight: 500;
+    padding-left: px-to-rem(6px);
+    margin-bottom: px-to-rem(4px);
+    &.active {
+      background-color: $button-green;
+      width: 100%;
+      color:$infoWindowContactColor;
+      font-weight: 900;
+    }
+  & > span {
+    display: inline-block;
+    padding-left: px-to-rem(10px);
+    }
+  }
+}
+
+
+.labInfoWindowFooter:hover {
+  cursor:pointer;
+    & .radnoVremeDetalji {
+        opacity: .8;
+        border-top-right-radius: px-to-rem(4px);
+        border-bottom-right-radius: px-to-rem(4px);
+        right:-110px;
+      }
+}
+
+.labInfoWindowWorkingHoursIcon {
+  margin: px-to-rem(10px) px-to-rem(8px) 0 px-to-rem(4px);
+  float:left;
+}
+
+.labInfoWindowVerified {
+  padding-right: px-to-rem(12px);
+  margin-bottom: px-to-rem(6px);
+}
+
+.labLogoInfoWindow {
+  height: px-to-rem(53px);
+  width: px-to-rem(48px);
+  float:left;
+  margin-right: px-to-rem(8px);
+}
+
+.labInfoWindowContactGroup {
+  margin-top:px-to-rem(8px);
+}
+
+.labInfoWindowAdresa,
+.labInfoWindowGrad,
+.labInfoWindowTelefoni ,  {
+  font-size: px-to-rem(13px);
+  line-height: px-to-rem(17px);
+  display: block;
+  margin-bottom: px-to-rem(2px);
+  font-weight: 500;
+  color:$infoWindowContactColor;
+}
+
+.gm-style-iw {
+background-color: $white-color;
+border-top-left-radius: px-to-rem(4px);
+border-bottom-left-radius: px-to-rem(4px);
+}
+
+
+/* FAQ
+**************************************************************/
+
+#faq {
+  margin-top:px-to-rem(40px);
+  min-height: px-to-rem(640px);
+  & h2 {
+    color:$primary-color;
+    margin-bottom: px-to-rem(40px);
+  }
+}
+
+#accordion > h5 {
+    color:#042A37;
+    padding: px-to-rem(16px) 0;
+    padding-right: .7rem;
+    border-bottom:1px solid $line-color;
+    margin-bottom: 0;
+    &:hover {
+      cursor: pointer;
+      background-color: $accordionHover;
+    }
+}
+
+#accordion > div p {
+  padding-top: px-to-rem(16px);
+}
+
+// faq colapsed section
+#accordion > [data-toggle="collapse"].collapsed::after {
+  font-family: 'Font Awesome 5 Free';
+  content: "\f0fe";
+}
+
+// faq expanded section
+#accordion > [data-toggle="collapse"]::after {
+  font-family: 'Font Awesome 5 Free';
+  content: "\f146";
+  padding-right: 8px;
+  float: right;
+}
+
+#accordion h5:last-of-type {
+  border-bottom:none;
+}
+
+.fa-arrow-circle-up {
+  font-size: px-to-rem(18px);
+  padding-left: px-to-rem(8px);
+}
+
+
+/*FOOTER AREA
+***********************************************************/
+footer {
+  background-image: url('../images/footer.svg');
+  background-repeat: repeat-x;
+  background-position:center;
+  height: px-to-rem(500px);
+  margin-top: px-to-rem(50px);
+  position:relative;
+    & > .overlay {
+    background-color: $primary-color;
+    height: 500px;
+    position: absolute;
+    left:0;
+    top:0;
+    opacity: 0.97;
+    width: 100%;
+    }
+}
+
+.logoFooter {
+  margin:px-to-rem(36px) 0;
+  width: px-to-rem(255px);
+}
+
+.fa-twitter,
+.fa-youtube,
+.fa-facebook-f,
+.fa-instagram {
+  color:$white-color;
+  font-size: px-to-rem(29px);
+  padding-right: px-to-rem(32px);
+  margin-bottom: px-to-rem(41px);
+}
+
+.social a:last-child .fab:last-child {
+  padding-right: 0;
+}
+
+.fab:hover {
+  opacity: 0.8;
+  text-decoration: none !important;
+}
+
+.analizeFooter {
+  font-size: px-to-rem(13px);
+  -webkit-column-count: 7; /* Chrome, Safari, Opera */
+  -moz-column-count: 7; /* Firefox */
+  column-count: 7;
+  color: $white-color;
+  margin-top: px-to-rem(15px);
+  display:inline-block;
+  line-height: px-to-rem(26px);
+  border-right: 1px solid $white-color;
+  // text-transform: capitalize;
+}
+
+.linksFooter {
+  font-size: px-to-rem(13px);
+  color: $white-color;
+  display:inline-block;
+  line-height: px-to-rem(22px);
+  margin-top: px-to-rem(15px);
+  line-height: px-to-rem(26px);
+    & > li a:hover {
+      opacity: 0.7;
+    }
+}
+
+.disclaimer {
+  font-size: px-to-rem(12px);
+  color: $white-color;
+  margin-top: px-to-rem(12px);
+  margin-bottom: px-to-rem(16px);
+}
 
 
 

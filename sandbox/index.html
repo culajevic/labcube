@@ -22,6 +22,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>labcube</title>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="../production/css/normalize.css">
   <link rel="stylesheet" href="../production/css/bootstrap.css">
   <link rel="stylesheet" href="../production/css/style.css">
 </head>
@@ -32,14 +33,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
 <header id="header">
-  <div class="container">
-    <nav class="navbar navbar-expand-md navbar-dark ">
+  <nav class="navbar navbar-expand-md navbar-dark mb-auto">
+    <div class="container">
       <a href="#" class="navbar-brand"><img src="images/logoSmallSlice.svg" alt="labcube"></a>
       <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse my-1" id="navbarCollapse">
-        <ul class="navbar-nav ml-auto">
+        <ul class="navbar-nav ml-auto ">
           <li class="nav-item">
             <a href="#" class="nav-link"><i class="far fa-comments"></i>Tumačenje rezultata</a>
           </li>
@@ -51,48 +52,751 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </li>
         </ul>
       </div><!-- collapse -->
-    </nav><!-- nav end -->
-  </div><!-- container end -->
+    </div><!-- container end -->
+  </nav><!-- nav end -->
+
   <!-- logo  -->
   <img src="images/logoFullSlice.svg" alt="labcube logo" class="logoFull">
 
   <div class="container searchFieldContainer">
-      <form>
-        <div class="row">
-          <div class="col-sm-12 col-lg-8 mx-auto ">
-            <input type="text" class="form-control search"  placeholder="Unesite naziv analize/laboratorije">
-            <input type="radio" name="searchFilter" id="analizeRadioButton" value="analiza" checked>
-              <label for="analizeRadioButton" class="analizeSearchFilter">analize</label>
-            <input type="radio" name="searchFilter" id="laboratorijeRadioButton" value="laboratorija" >
-              <label for="laboratorijeRadioButton" class="laboratorijeSearchFilter">laboratorije</label>
-
-
-          </div> <!-- searchField -->
-        </div><!-- row -->
-      </form><!-- form end -->
+    <form>
+      <div class="row">
+        <div class="col-sm-12 col-lg-8 mx-auto ">
+          <input type="text" class="form-control search"  placeholder="Unesite naziv analize/laboratorije">
+          <input type="radio" name="searchFilter" id="analizeRadioButton" value="analiza" checked>
+            <label for="analizeRadioButton" class="analizeSearchFilter">analiza</label>
+          <input type="radio" name="searchFilter" id="laboratorijeRadioButton" value="laboratorija" >
+            <label for="laboratorijeRadioButton" class="laboratorijeSearchFilter">laboratorija</label>
+        </div> <!-- searchField -->
+        <div class="col-sm-12 text-center">
+            <button type="button" class="btn btn-lg btn-outline-warning labCubeDemoBtn">Kako radi labcube?<i class="far fa-play-circle"></i></button>
+        </div>
+      </div><!-- row -->
+    </form><!-- form end -->
   </div><!-- container -->
 </header><!-- header end -->
 
+<section id="analysisGroup">
+  <div class="container">
+    <div class="row analysisContainer">
+
+      <div class="col-sm-12 col-md-6 col-lg-4 d-flex align-self-stretch">
+        <div class="card">
+           <div class="card-body">
+             <div class="analysisHeader">
+                <img src="images/dijabetes.svg" alt="" class="analysisIcon ">
+                <span class="analysisTitle d-flex align-self-stretch">Dijabetes</span>
+             </div>
+             <p class="card-text ">Dijabetes melitus je oboljenje koje dovodi do povećanja nivoa šećera (glukoze) u krvi. Dugoročno, dijabetes dovodi do teških komplikacija (kardiovaskularne bolesti, bolesti bubrega, oštećenje očiju). Zato je potrebno na vreme postaviti dijagnozu i bolest držati pod kontrolom. Od dijabetesa se najčešće ne umire, umire se od komplikacija koje se mogu sprečiti. Grupa testova sadrži sve parametre potrebne za postavljanje dijagnoze i praćenje komplikacija dijabetesa.</p>
+              <button type="button" class="btn btn-secondary btn-block clickMore">Saznaj više
+                <span class="analysisNumber">25</span></button>
+           </div><!-- card body end -->
+         </div><!-- card end -->
+      </div><!-- grid div -->
+
+      <div class="col-sm-12 col-md-6 col-lg-4 d-flex align-self-stretch">
+        <div class="card ">
+           <div class="card-body">
+             <div class="analysisHeader">
+                <img src="images/anemije.svg" alt="" class="analysisIcon">
+                <span class="analysisTitle d-flex align-self-stretch">Anemije</span>
+              </div>
+               <p class="card-text ">Anemija ili malokrvnost je stanje koje se definiše smanjenim brojem ili zapreminom eritrocita, ili smanjenim sadržajem hemoglobina u eritrocitima. Anemije su prisutne kod približno 10% populacije i ako se primete neki od simptoma kao što su malaksalost ili glavobolja trebalo bi se obratiti lekaru koji može preporučiti analize iz ove grupe.</p>
+              <button type="button" class="btn btn-secondary btn-block clickMore">Saznaj više<span class="analysisNumber">19</span></button>
+           </div><!-- card body end -->
+         </div><!-- card end -->
+      </div><!-- grid div -->
+
+      <div class="col-sm-12 col-md-6 col-lg-4 d-flex align-self-stretch">
+        <div class="card ">
+           <div class="card-body">
+             <div class="analysisHeader">
+                <img src="images/enzimi.svg" alt="" class="analysisIcon">
+                <span class="analysisTitle d-flex align-self-stretch">Enzimi</span>
+              </div>
+               <p class="card-text ">Enzimi su biološki katalizatori, oni ubrzavaju biohemijske reakcije u organizmu. Gotovo sve reakcije u organizmu zahtevaju prisustvo enzima, kako bi reakcije bile dovoljno brze da održe ljudski život. Enzime stvara organizam i troši ih u reakcijama. Bez enzima organizam ne bi mogao da funkcioniše. Set testova daje uvid u osnovne metaboličke funkcije organizma i stanje ključnih organa.</p>
+              <button type="button" class="btn btn-secondary btn-block clickMore">Saznaj više<span class="analysisNumber">12</span></button>
+           </div><!-- card body end -->
+         </div><!-- card end -->
+      </div><!-- grid div -->
+
+      <div class="col-sm-12 col-md-6 col-lg-4 d-flex align-self-stretch">
+        <div class="card ">
+           <div class="card-body">
+             <div class="analysisHeader">
+                <img src="images/feces.svg" alt="" class="analysisIcon">
+                <span class="analysisTitle d-flex align-self-stretch">Feces</span>
+              </div>
+               <p class="card-text ">Serija testova koji se rade iz uzorka fecesa (stolice) i koji mogu doprineti postavljanju dijagnoze nekih oboljenja digestivnog trakta. Analiziranje obuhvata mikroskopsko analiziranje, hemijske i mikrobiološke testove. Šta je uzrok tegobe (karcinom, upale, bakterijske infekcije, paraziti) može se saznati nakon analize.</p>
+              <button type="button" class="btn btn-secondary btn-block clickMore">Saznaj više<span class="analysisNumber">12</span></button>
+           </div><!-- card body end -->
+         </div><!-- card end -->
+      </div><!-- grid div -->
+
+      <div class="col-sm-12 col-md-6 col-lg-4 d-flex align-self-stretch">
+        <div class="card ">
+           <div class="card-body">
+             <div class="analysisHeader">
+                <img src="images/hematologija.svg" alt="" class="analysisIcon">
+                <span class="analysisTitle d-flex align-self-stretch">Hematologija</span>
+              </div>
+               <p class="card-text ">Hematologija je nauka koja se bavi proučavanjem krvi. Ime potiče od grčkih reči hema što znači krv i logos - nauka. Predstavljena je skupom parametara koji doprinose poznavanju i praćenju funkcija krvi. Analizom hematoloških parametara se mogu pratiti neka od oboljenja kao što su poremećaji broja i oblika krvnih ćelija, poremećaji zgrušavanja krvi, bolesti limfnog tkiva.</p>
+              <button type="button" class="btn btn-secondary btn-block clickMore">Saznaj više<span class="analysisNumber">29</span></button>
+           </div><!-- card body end -->
+         </div><!-- card end -->
+      </div><!-- grid div -->
+
+      <div class="col-sm-12 col-md-6 col-lg-4 d-flex align-self-stretch">
+        <div class="card ">
+           <div class="card-body">
+             <div class="analysisHeader">
+                <img src="images/hipofiza.svg" alt="" class="analysisIcon">
+                <span class="analysisTitle d-flex align-self-stretch">Hipofiza</span>
+              </div>
+               <p class="card-text ">Hipofiza ili pituitarna žlezda je endokrina žlezda, veličine graška, koja je smeštena iza očiju, odnosno ispod prednjeg dela mozga. Hipofiza luči hormone pod uticajem hipotalamusa i preko njih deluje na druge endokrine žlezde u organizmu. Hipofiza reguliše rast, krvni pritisak, rad bubrega i kada dođe do poremećaja u radu hipofize posledice se odražavaju na celokupni endokrini sistem, što može biti okidač mnogih oboljenja.</p>
+              <button type="button" class="btn btn-secondary btn-block clickMore">Saznaj više<span class="analysisNumber">29</span></button>
+           </div><!-- card body end -->
+         </div><!-- card end -->
+      </div><!-- grid div -->
+
+      <div class="col-sm-12 col-md-6 col-lg-4 d-flex align-self-stretch">
+        <div class="card ">
+           <div class="card-body">
+             <div class="analysisHeader">
+                <img src="images/koagulacija.svg" alt="" class="analysisIcon">
+                <span class="analysisTitle d-flex align-self-stretch">Koagulacija</span>
+              </div>
+               <p class="card-text ">Koagulacija (zgrušavanje krvi) je proces koji započinje nakon povrede krvnog suda, tokom koga krv prelazi iz tečnog stanja u gel i stvara se krvni ugrušak. Fiziološka funkcija koagulacije je da zaustavi krvarenje. Poremećaji koagulacije mogu dovesti do toga da dođe do preteranog krvarenja ili povećanog zgrušavanja krvi čak i kada nema povrede. U procesu koagulacije učestvuje dosta faktora, a analiziranjem se dolazi do pregleda celog procesa.</p>
+              <button type="button" class="btn btn-secondary btn-block clickMore">Saznaj više<span class="analysisNumber">29</span></button>
+           </div><!-- card body end -->
+         </div><!-- card end -->
+      </div><!-- grid div -->
+
+
+      <div class="col-sm-12 col-md-6 col-lg-4 d-flex align-self-stretch">
+        <div class="card ">
+           <div class="card-body">
+             <div class="analysisHeader">
+                <img src="images/biohemija.svg" alt="" class="analysisIcon">
+                <span class="analysisTitle d-flex align-self-stretch">Biohemija</span>
+              </div>
+               <p class="card-text ">Skup najosnovnijih biohemijskih parametara se nalazi u ovoj grupi. Testiranje doprinosi pregledu opšteg stanja organizma, a u zavisnosti od rezultata može ukazivati i na neka oboljenja.</p>
+              <button type="button" class="btn btn-secondary btn-block clickMore">Saznaj više<span class="analysisNumber">31</span></button>
+           </div><!-- card body end -->
+         </div><!-- card end -->
+      </div><!-- grid div -->
+
+      <div class="col-sm-12 col-md-6 col-lg-4 d-flex align-self-stretch">
+        <div class="card ">
+           <div class="card-body">
+             <div class="analysisHeader">
+                <img src="images/kostaniMarkeri.svg" alt="" class="analysisIcon">
+                <span class="analysisTitle d-flex align-self-stretch">Koštani markeri</span>
+              </div>
+               <p class="card-text ">Skeletni sistem (kosti) je deo tela koji se u toku normalnog fiziološkog procesa stalno razgrađuje i obnavlja. Poremećaji u tom procesu mogu dovesti do problema i bolesti kao što je osteoporoza. Testovi iz ove grupe daju pregled stanja procesa resorpcije i izgradnje kostiju, a takođe pomažu u postavljanju dijagnoze nekih metaboličkih oboljenja kostiju.</p>
+              <button type="button" class="btn btn-secondary btn-block clickMore">Saznaj više<span class="analysisNumber">29</span></button>
+           </div><!-- card body end -->
+         </div><!-- card end -->
+      </div><!-- grid div -->
+    </div><!-- row analysiscontainer -->
+
+    <div class="text-center">
+      <button class="btn btn-success text-uppercase">sve analize</button>
+    </div>
+
+  </div><!-- container end -->
+</section><!-- analysis group -->
+
+<section id="googleMap">
+  <div id="map"></div>
+  <div class="labinfo">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-6 col-xl-4 mapTitle text-sm-center text-md-left" id="way">Sve laboratorije u Srbiji</div>
+          <div class="d-none d-sm-none d-md-block col-sm-2 align-self-center flex-column ">
+            <span class="d-flex align-self-start labMapInfo">ukupno laboratorija</span>
+            <span class="d-flex align-self-start num">350</span>
+          </div>
+          <div class="d-none d-sm-none d-md-block col-sm-2 align-self-center flex-column">
+            <span class="d-flex align-self-start labMapInfo">trenutno otvoreno</span>
+            <span class="d-flex align-self-start num">185</span>
+          </div>
+          <div class="d-none d-sm-none d-md-block col-sm-1 col-md-1 col-lg-2 col-xl-2 align-self-center flex-column">
+            <span class="d-flex align-self-start labMapInfo">dostupnih analiza</span>
+            <span class="d-flex align-self-start num">708</span>
+          </div>
+      </div><!--  row end-->
+    </div><!-- container end -->
+  </div> <!-- lab info end -->
+</section><!-- google map end -->
+
+<div id="faq">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="text-center">Najčešće postavljana pitanja</h2>
+        <div id="accordion">
+                <h5 data-toggle="collapse" data-target="#collapse1" class="collapsed">Kome je namenjen labcube?</h5>
+                  <div id="collapse1" class="collapse"  data-parent="#accordion">
+                    <p>Lorem ipsum dolor Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe dolore eum nulla provident eligendi officiis rer eum cumque minus, repudiandae modi, facere ratione consequatur quidem. sitmet, consectetur adipisicing elit. Voluptas ut vel, ullam provident doloremque similique natus ipsum soluta amet corporis.</p>
+                  </div>
+
+                <h5 data-toggle="collapse" data-target="#collapse2" class="collapsed">Da li je коrišćenje sajta besplatno? </h5>
+                  <div id="collapse2" class="collapse" data-parent="#accordion">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas ut vel, ullam provident doloremque similique nats ipsum soluta amet corporis.</p>
+                  </div>
+
+                  <h5 data-toggle="collapse" data-target="#collapse3" class="collapsed">Da li je labcube laboratorija?</h5>
+                <div id="collapse3" class="collapse" data-parent="#accordion">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas ut vel, ullam provident doloremque similique nats ipsum soluta amet corporis.</p>
+                  </div>
+
+                  <h5 data-toggle="collapse" data-target="#collapse4" class="collapsed">Kako da se informišem o analizama koje me zanimaju?</h5>
+                    <div id="collapse4" class="collapse"  data-parent="#accordion">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas ut vel, ullam provident doloremque similique nats ipsum soluta amet corporis.</p>
+                    </div>
+
+                    <h5 data-toggle="collapse" data-target="#collapse5" class="collapsed">Kako da pronađem najbližu laboratoriju?</h5>
+                      <div id="collapse5" class="collapse"  data-parent="#accordion">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas ut vel, ullam provident doloremque similique nats ipsum soluta amet corporis.</p>
+                      </div>
+
+                      <h5 data-toggle="collapse" data-target="#collapse6" class="collapsed">Kako da pogledam podatke o laboratoriji?</h5>
+                        <div id="collapse6" class="collapse" data-parent="#accordion">
+                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas ut vel, ullam provident doloremque similique nats ipsum soluta amet corporis.</p>
+                        </div>
+
+                        <h5 data-toggle="collapse" data-target="#collapse7" class="collapsed">Da li labcube tumači rezultate  analiza?</h5>
+                          <div id="collapse7" class="collapse" data-parent="#accordion">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas ut vel, ullam provident doloremque similique nats ipsum soluta amet corporis.</p>
+                          </div>
+
+                          <h5 data-toggle="collapse" data-target="#collapse8" class="collapsed">Kako da prosledim rezultate odabranom lekaru?</h5>
+                            <div id="collapse8" class="collapse" data-parent="#accordion">
+                              <p>Lorem ipsum dolorod in modi. Doloribus libero eum illo, deserunt culpa rem nesciunt voluptatibus placeat perferendis est optio quo sequi. ipsum dolor sit amet, consectetur adipisicing elit. Voluptas ut vel, ullam provident doloremque similique nats ipsum soluta amet corporis.</p>
+                            </div>
+        </div><!-- accordion end -->
+      </div><!-- col-12 -->
+    </div> <!-- row -->
+  </div> <!-- container -->
+</div><!-- faq end -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="text-center">
+        <a class="btn btn-success text-uppercase backToTop" href="">povratak na vrh <i class="fas fa-arrow-circle-up"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<footer>
+  <div class="overlay">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-6">
+          <img src="images/logoFullSlice.svg" alt="labcube logo" class="logoFooter">
+        </div>
+
+        <div class="col-6 d-flex social">
+          <a href="#" class="align-items-end d-flex ml-auto"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="align-items-end d-flex "><i class="fab fa-instagram"></i></a>
+          <a href="#" class="align-items-end d-flex "><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="align-items-end d-flex "><i class="fab fa-youtube"></i></a>
+        </div><!-- social col-md-4 end -->
+
+        <div class="d-none d-sm-none col-sm-10 d-lg-block">
+          <ul class="list-unstyled analizeFooter">
+            <li>alergije</li>
+            <li>aminikosiline</li>
+            <li>anemije</li>
+            <li>antitela</li>
+            <li>bakterije</li>
+            <li>biohemija</li>
+            <li>bris</li>
+            <li>brzi testovi</li>
+            <li>celijakija</li>
+            <li>dermatologija</li>
+            <li>dijabetes</li>
+            <li>droge</li>
+            <li>elektroforeza</li>
+            <li>enzimi</li>
+            <li>feces</li>
+            <li>helicobacter pylori</li>
+            <li>hematologija</li>
+            <li>hepatitisi</li>
+            <li>hipofiza</li>
+            <li>interleukini</li>
+            <li>kamen</li>
+            <li>koagulacija</li>
+            <li>kontrola sterilnosti</li>
+            <li>koštani markeri</li>
+            <li>lekovi</li>
+            <li>likvor</li>
+            <li>lipidni status</li>
+            <li>markeri zapaljenja</li>
+            <li>mikroelementi</li>
+            <li>nadbubrežna žlezda</li>
+            <li>netolerancija na hranu</li>
+            <li>ostali hormoni</li>
+            <li>ostali materijali</li>
+            <li>paraziti</li>
+            <li>patohistologija</li>
+            <li>PCR</li>
+            <li>pljuvačka</li>
+            <li>polni hormoni</li>
+            <li>praćenje trudnoće</li>
+            <li>reumatoidni artritis</li>
+            <li>specifični proteini</li>
+            <li>sperma</li>
+            <li>srčani markeri</li>
+            <li>tiroidna žlezda</li>
+            <li>TORCH</li>
+            <li>transfuziološke analize</li>
+            <li>tumor markeri</li>
+            <li>urin</li>
+            <li>usluge</li>
+            <li>virusi</li>
+            <li>vitamini</li>
+          </ul><!-- analize footer list end -->
+        </div> <!-- col-md-6 end -->
+
+        <div class="col-sm-12 col-lg-2">
+            <ul class="list-unstyled linksFooter">
+              <li><a href="" class="text-white">politika privatnosti</a></li>
+              <li><a href="" class="text-white">uslovi korišćenja</a></li>
+              <li><a href="" class="text-white">kontakt</a></li>
+              <li><a href="" class="text-white">o nama</a></li>
+              <li><a href="" class="text-white">faq</a></li>
+            </ul><!-- ul footer menu end -->
+        </div><!-- col-sm-12 col-lg-2 -->
+        <div class="col-sm-12">
+          <p class="disclaimer">Sadržaj stranice labcube.rs kao što su tekst, grafika, slike i drugi dokumenti su isključivo informativne prirode. Sadržaj ovog sajta nije namenjen zameni stručnog lekarskog mišljenja, terapije ili lečenja. Uvek tražite savet svog lekara ili drugog kvalifikovanog zdravstvenog radnika. Nikada nemojte zanemariti savet vašeg lekara zbog nečega što ste pročitali na ovom sajtu. Ukoliko Vam je potrebna hitna medicinska pomoć pozovite <strong>194</strong>.</p>
+        </div><!-- col-sm-12 end -->
+      </div><!-- row end -->
+    </div><!-- container end -->
+  </div> <!-- overlay div -->
+</footer><!-- footer end -->
+
+
 <!-- main js file -->
 <script src="../production/js/main.js"></script>
+<script>
+$(document).ready(function(){
 
+
+  var waypoint = new Waypoint({
+    element: document.getElementById('googleMap'),
+    handler: function(direction) {
+      if(direction == 'down') {
+        $('.num').addClass('numOn');
+        $(".num").numScroll({
+          time:5000
+      });
+    }
+    // else {
+    //   $('.num').removeClass('numOn');
+    // }
+    },
+    offset: '94%'
+  });
+});
+
+
+</script>
 
 <script>
 
-  $(document).ready(function(){
 
-  // $("input[type='radio']").click(function(){
-  //   test = $("input[name='searchFilter']:checked").val();
-  //   console.log(test);
-  // });
+  function initMap(){
+
+    // map options
+    let options = {
+      zoom:14,
+      center: {lat:44.808048, lng:20.462796},
+      disableDefaultUI: true,
+      zoomControl: false,
+      mapTypeControl: false,
+      scaleControl: false,
+      streetViewControl: true,
+      rotateControl: false,
+      fullscreenControl: true,
+      fullscreenControlOptions:{
+        position:google.maps.ControlPosition.RIGHT_BOTTOM
+      },
+      styles: [
+          {
+            "featureType": "administrative.country",
+            "elementType": "geometry.fill",
+            "stylers": [
+              {
+                "color": "#fbd2d9"
+              },
+              {
+                "visibility": "on"
+              }
+            ]
+          },
+          {
+            "featureType": "administrative.country",
+            "elementType": "geometry.stroke",
+            "stylers": [
+              {
+                "color": "#9896a9"
+              },
+              {
+                "weight": 2
+              }
+            ]
+          },
+          {
+            "featureType": "administrative.land_parcel",
+            "elementType": "geometry.fill",
+            "stylers": [
+              {
+                "color": "#9896a9"
+              }
+            ]
+          },
+          {
+            "featureType": "administrative.land_parcel",
+            "elementType": "labels",
+            "stylers": [
+              {
+                "visibility": "off"
+              }
+            ]
+          },
+          {
+            "featureType": "administrative.locality",
+            "elementType": "geometry.fill",
+            "stylers": [
+              {
+                "visibility": "on"
+              }
+            ]
+          },
+          {
+            "featureType": "administrative.neighborhood",
+            "elementType": "geometry.fill",
+            "stylers": [
+              {
+                "visibility": "on"
+              }
+            ]
+          },
+          {
+            "featureType": "administrative.neighborhood",
+            "elementType": "labels",
+            "stylers": [
+              {
+                "color": "#aaa9b1"
+              },
+              {
+                "visibility": "simplified"
+              }
+            ]
+          },
+          {
+            "featureType": "poi",
+            "elementType": "labels.text",
+            "stylers": [
+              {
+                "visibility": "off"
+              }
+            ]
+          },
+          {
+            "featureType": "poi.business",
+            "stylers": [
+              {
+                "visibility": "off"
+              }
+            ]
+          },
+          {
+            "featureType": "poi.park",
+            "elementType": "geometry.fill",
+            "stylers": [
+              {
+                "color": "#aadc55"
+              }
+            ]
+          },
+          {
+            "featureType": "poi.park",
+            "elementType": "labels.text",
+            "stylers": [
+              {
+                "visibility": "off"
+              }
+            ]
+          },
+          {
+            "featureType": "road",
+            "elementType": "geometry.fill",
+            "stylers": [
+              {
+                "color": "#ecebed"
+              },
+              {
+                "visibility": "on"
+              }
+            ]
+          },
+          {
+            "featureType": "road",
+            "elementType": "labels.text",
+            "stylers": [
+              {
+                "color": "#d8d6dc"
+              }
+            ]
+          },
+          {
+            "featureType": "road.arterial",
+            "elementType": "geometry.fill",
+            "stylers": [
+              {
+                "color": "#fefefe"
+              }
+            ]
+          },
+          {
+            "featureType": "road.arterial",
+            "elementType": "labels.text",
+            "stylers": [
+              {
+                "color": "#9a9a9a"
+              },
+              {
+                "visibility": "simplified"
+              }
+            ]
+          },
+          {
+            "featureType": "road.highway",
+            "elementType": "labels",
+            "stylers": [
+              {
+                "visibility": "off"
+              }
+            ]
+          },
+          {
+            "featureType": "road.local",
+            "stylers": [
+              {
+                "visibility": "off"
+              }
+            ]
+          },
+          {
+            "featureType": "road.local",
+            "elementType": "geometry.fill",
+            "stylers": [
+              {
+                "color": "#eaecec"
+              },
+              {
+                "visibility": "on"
+              }
+            ]
+          },
+          {
+            "featureType": "road.local",
+            "elementType": "labels",
+            "stylers": [
+              {
+                "visibility": "off"
+              }
+            ]
+          },
+          {
+            "featureType": "road.local",
+            "elementType": "labels.text.fill",
+            "stylers": [
+              {
+                "color": "#9ba4a4"
+              },
+              {
+                "visibility": "on"
+              }
+            ]
+          },
+          {
+            "featureType": "transit",
+            "elementType": "geometry.fill",
+            "stylers": [
+              {
+                "visibility": "off"
+              }
+            ]
+          },
+          {
+            "featureType": "transit.station",
+            "elementType": "geometry.fill",
+            "stylers": [
+              {
+                "visibility": "on"
+              }
+            ]
+          },
+          {
+            "featureType": "transit.station.bus",
+            "stylers": [
+              {
+                "visibility": "simplified"
+              }
+            ]
+          },
+          {
+            "featureType": "transit.station.bus",
+            "elementType": "geometry.fill",
+            "stylers": [
+              {
+                "color": "#ff00ff"
+              },
+              {
+                "visibility": "simplified"
+              }
+            ]
+          },
+          {
+            "featureType": "water",
+            "elementType": "geometry.fill",
+            "stylers": [
+              {
+                "color": "#1d88e5"
+              },
+              {
+                "lightness": 15
+              }
+            ]
+          }
+        ]
+    }
+
+    // new map
+    let map = new google.maps.Map(document.getElementById('map'), options);
+
+    // array of markers
+    let markers = [
+      {
+        coords:{lat:44.816174, lng:20.469919},
+        iconImage:'images/pinClosed.svg',
+        name: 'prvi lab'
+      },
+      {
+        coords:{lat:44.829675, lng:20.401690},
+        iconImage:'images/pinRegular.svg',
+        name: 'drugi lab'
+      },
+      {
+        coords:{lat:44.801335, lng:20.381693},
+        iconImage:'images/pinRegular.svg',
+        name: 'treci lab'
+      }
+    ];
+
+    var content ='<div id="labInfoWindow">' +
+                    '<img src="images/verified.svg" class="labInfoWindowVerified" title="akreditovano">'+
+                    '<span class="labInfoWindowTitle">'+'Beo-lab (mikrobiološka laboratorija)'+'</span>'+
+                    '<div class="labInfoWindowContactGroup">'+
+                        '<img src="images/placeholder.svg" class="labLogoInfoWindow">'+
+                        '<p class="labInfoWindowAdresa">'+'Ljube Nešića bb (TC Kraljevica lam.1)'+'</p>'+
+                        '<p class="labInfoWindowGrad">'+'Beograd (Rakovica) - Vidikovac '+'</p>'+
+                        '<p class="labInfoWindowTelefoni">'+'011/7886742, 064/1234567'+'</p>'+
+                    '</div>'+
+                    '<div class="labInfoWindowFooter">'+
+                        '<img src="images/radnoVreme.svg" class="labInfoWindowWorkingHoursIcon">'+
+                        '<div class="radnoVreme">'+'Radno vreme'+'</div>'+
+                        '<div class="status">'+'otvoreno'+'</div>'+
+                        '<div class="radnoVremeDetalji">'+
+                          '<p class="daysInWeek">P<span>08:00 - 21:00</span></p>'+
+                          '<p class="daysInWeek">U<span>08:00 - 21:00</span></p>'+
+                          '<p class="daysInWeek active">S<span>08:00 - 21:00</span></p>'+
+                          '<p class="daysInWeek">Č<span>08:00 - 21:00</span></p>'+
+                          '<p class="daysInWeek">P<span>08:00 - 21:00</span></p>'+
+                          '<p class="daysInWeek">S<span>08:00 - 21:00</span></p>'+
+                          '<p class="daysInWeek">N<span>08:00 - 21:00</span></p>'+
+                        '</div>'+
+                    '</div>'+
+                  '</div>';
+
+    let markersData = [];
+      for (let i = 0; i < markers.length; i++) {
+        addMarker(markers[i]);
+      }
+
+      function addMarker(values) {
+        let marker = new google.maps.Marker({
+
+          position:{lat:values.coords.lat, lng:values.coords.lng},
+          icon:values.iconImage
+          });
+          markersData.push(marker);
+
+          let infoWindow = new google.maps.InfoWindow({
+            content:content
+          });
 
 
+          // add infowindow
+          marker.addListener('click', function(){
+            var test = infoWindow.open(map, marker);
+          });
 
-  });
+          google.maps.event.addListener(map, 'click', function() {
+            infoWindow.close();
+          });
+
+          google.maps.event.addListener(infoWindow, 'domready', function() {
+
+                // Reference to the DIV that wraps the bottom of infowindow
+                var iwOuter = $('.gm-style-iw');
+                  iwOuter.parent().parent().css({
+                    'left':'8px',
+                    'top':'41px'
+                  });
+                iwOuter.css({'position':'static'});
+                // changing x close button position in infowindow
+                    iwOuter.next().css({
+                      'top':'4px',
+                      'right':'30px'
+                    });
+                var iwBackground = iwOuter.prev();
+                  iwBackground.children(':nth-child(1)').css({'display' : 'none'});
+                  iwBackground.children(':nth-child(2)').css({
+                    'background-color':'transparent',
+                    'box-shadow': 'rgba(0, 0, 0, 0.4) -76px -78px 172px -18px',
+                    'width': '211px !important',
+                    'height': '87px !important',
+                    'top':'0',
+                    'left':'0',
+                    'z-index':'-5'
+                  });
+                  iwBackground.children(':nth-child(3)').css({'display' : 'none'});
+                  iwBackground.children(':nth-child(4)').css({'display' : 'none'});
+            });// google.maps.event.addListener
+      }// add marker function end
+
+      // marker clustering
+      let markerCluster = new MarkerClusterer(map, markersData,
+        {imagePath:'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+
+}// init function end
+
+
 </script>
 
 <!-- google maps api -->
+<script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTj52J6A1dcfdJzqHErFGR_IDs6ahyTes&callback=initMap"
   type="text/javascript"></script>
+
 </body>
 </html>

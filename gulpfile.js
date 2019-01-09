@@ -12,7 +12,7 @@ const dest = 'production';
 
 // compile sass and create source map
 gulp.task('sass', () =>
-  gulp.src(['node_modules/bootstrap/scss/bootstrap.scss'  ,src+'/scss/*.scss'])
+  gulp.src(['node_modules/normalize.css/normalize.css','node_modules/bootstrap/scss/bootstrap.scss', src+'/scss/*.scss'])
     .pipe(maps.init())
     .pipe(sass().on('error', sass.logError))
     .pipe(maps.write('./'))
@@ -34,7 +34,7 @@ gulp.task('imageMin', () =>
 
 // concatenate js files, minify them and create source map
 gulp.task('concatenationJs', () =>
-  gulp.src(['node_modules/jquery/dist/jquery.min.js', 'node_modules/bootstrap/dist/js/bootstrap.min.js', src+'/js/*.js'])
+  gulp.src(['node_modules/jquery/dist/jquery.min.js', 'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js', 'node_modules/waypoints/lib/jquery.waypoints.min.js', src+'/js/*.js'])
   .pipe(maps.init())
   .pipe(concat('main.js'))
   .pipe(uglify())
