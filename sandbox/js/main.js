@@ -14,6 +14,24 @@ $(window).scroll(function(){
     }
 });
 
+// sticky navigation for side menu
+$(window).scroll(function(){
+  var height = $(window).scrollTop();
+  // var footer = $('#footer').offset().top;
+  // var result = footer-height;
+// if (result<490) {
+    // console.log('height:'+height + ' ' + 'footer:'+footer);
+    // alert("sada???");
+  // }
+
+    if(height > 270) {
+      $(".odabraneAnalize").addClass('fixed-right');
+    }
+    else {
+      $(".odabraneAnalize").removeClass('fixed-right');
+    }
+});
+
 // scrol to top button
 $('.backToTop').click(function(){
   $('html').animate({scrollTop:0}, 1200);
