@@ -2,3 +2,26 @@
 @function px-to-rem($target, $default:16px) {
   @return ($target/$default) * 1rem;
 }
+
+//adding rsd to the price
+@mixin rsd($bottom) {
+  &::after {
+    content:'RSD';
+    font-size:px-to-rem(10px);
+    color:$smallDisabled;
+    padding-left: px-to-rem(8px);
+    bottom:$bottom;
+    position: absolute;
+  }
+}
+
+@mixin liItemImage($img, $padding-left, $position:0 0){
+  background: url($img);
+  background-position: $position;
+  background-repeat: no-repeat;
+  padding-top: 0;
+  padding-left: $padding-left;
+  color:$fontColorResultsTable;
+  line-height: 24px;
+  // margin-top: 20px;
+}

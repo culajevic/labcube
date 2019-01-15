@@ -1,5 +1,4 @@
 @import 'variables.scss';
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&subset=latin-ext');
 @import 'functions.scss';
 
 * {
@@ -8,7 +7,7 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: $font;
   font-size: 16px;
 }
 
@@ -39,6 +38,14 @@ a:link{
     .container {
       margin-bottom: auto;
     }
+}
+
+#smallHeader {
+  @extend #header;
+  height: 210px;
+  .container {
+    // margin-bottom: 0;
+  }
 }
 
 /* NAVIGATION MENU
@@ -73,13 +80,38 @@ a:link{
   100% {opacity: 0.9;}
 }
 
+.fixed-right {
+  position:sticky;
+  // width: inherit;
+  animation-name: sideBarAnimation;
+  animation-duration: .3s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes sideBarAnimation {
+  0% {top: 5px;}
+  25% {top: 10px;}
+  50% {top: 15px;}
+  100% {top: 20px;}
+}
+
+.sidebar {
+  position: relative;
+
+}
+
 /* SEARCH AREA
 **************************************************/
 
 .searchFieldContainer {
   @extend .logoFull;
   margin-top: px-to-rem(147px); // put to 155 when button is inserted
-  // margin-top: 105px;
+}
+
+.searchFieldContainerInner {
+  @extend .logoFull;
+  margin-top: px-to-rem(105px); // put to 155 when button is inserted
 }
 
 //search field size
@@ -88,7 +120,12 @@ a:link{
   height: px-to-rem(50px);
 }
 
-
+.searchInner {
+  position:relative;
+  top: 55px;
+  left:0;
+  height: px-to-rem(50px);
+}
 
 .fa-play-circle {
   font-size: 38px;
@@ -355,8 +392,8 @@ margin-bottom: 30px;
 
 .radnoVremeDetalji {
   display: block;
-  height: px-to-rem(151px);
-  top:px-to-rem(-115px);
+  height: px-to-rem(150px);
+  top:px-to-rem(-114.4px);
   right:0;
   width:px-to-rem(110px);
   opacity: 0;
@@ -483,6 +520,254 @@ border-bottom-left-radius: px-to-rem(4px);
   font-size: px-to-rem(18px);
   padding-left: px-to-rem(8px);
 }
+
+
+/* LAB SEARCH results
+************************************************************/
+#results {
+  margin-top: 80px;
+  margin-bottom: 150px;
+  .btn-success {
+    margin-bottom: 0;
+  }
+  .btn {
+    font-size: 12px;
+    padding: 6px 25px;
+  }
+}
+
+#details {
+  @extend #results;
+}
+
+.results tr:first-child>td{
+  border-top:0px;
+}
+
+// styling first td inside table with results
+.results tr>td:first-child {
+  max-width: 280px;
+  font-weight: 500;
+  cursor:pointer;
+}
+
+// set hospital icon hover cursor
+.results tr>td:nth-child(4) {
+  cursor:pointer;
+}
+
+// styling vertical ling between first 2 tds
+.results tr>td:nth-child(2)::before {
+		content:'';
+		position: absolute;
+		height: 63px;
+		border-left: 1px solid #E1E1E1;
+		padding-right: 20px;
+		left:-8px;
+    bottom:12px;
+	}
+
+// stylind td height and adding RSD as text after price
+td {
+  height: 88px;
+  position: relative;
+  color:$fontColorResultsTable;
+  &>span {
+    @include rsd(px-to-rem(37px));
+  }
+}
+
+.table th, .table td {
+  vertical-align: middle;
+}
+
+.table-hover tbody tr:hover td {
+	background-color: $tableHover;
+}
+
+// styling odabrane analize card
+.card-header {
+  font-weight: 500;
+  color: $cardHeader;
+  background-color: $tableHover;
+  padding:0 0.7rem;
+  padding-top: px-to-rem(16px);
+  padding-bottom: px-to-rem(8px);
+  vertical-align: bottom;
+  &:after{
+    content:url(../images/odabraneAnalize.svg);
+    float:right;
+  }
+}
+.removeItem {
+  float:right;
+}
+
+.list-group-item {
+  font-size: 12px;
+  color: #666;
+  padding-left: 0.7rem;
+}
+
+// styling select text
+.odabraneAnalize .form-control {
+  padding-left: 20px;
+  padding-top: 3px;
+  height: 32px;
+  color: $fontColorResultsTable;
+  opacity: .5;
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+.form-control:focus{
+    border-color: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.city {
+  position:relative;
+}
+
+.cityMarker {
+  position:absolute;
+  top:48px;
+  display: inline-block;
+  left:20px;
+}
+
+.labGroupIconSelectedAnalysis {
+  width: 13px;
+  height: 13px;
+  margin-right: 6px;
+}
+
+span.remove:hover{
+  cursor:pointer;
+}
+
+// arrow colof for tooltip
+.bs-tooltip-auto[x-placement^=bottom] .arrow::before,
+.bs-tooltip-bottom .arrow::before {
+  border-bottom-color: $tooltipBorder;
+}
+
+.tooltip-inner {
+  background-color: $white-color !important;
+  color: $fontColorResultsTable;
+  border:1px solid $tooltipBorder;
+  font-size: 16px;
+  max-width: 350px;
+  padding: 16px;
+  text-align:justify;
+}
+
+
+.banner {
+  position:relative;
+  // border:1px solid red;
+  .btnBanner {
+    position:absolute;
+    right:10px;
+    top:115px;
+    font-size: 10px !important;
+    padding-left:12px !important;
+    padding-right:12px !important;
+  }
+}
+
+.bannerTumacenjeAnaliza {
+  // min-width: 255px;
+  width: 100%;
+  min-height: 188px;
+  position: relative;
+}
+
+.bannerOverlay {
+  background: url(../images/plaviOver.svg) no-repeat;
+  position:absolute;
+  right:0px;
+  top:0;
+  width: 143px;
+  height: 141px;
+  padding-top: 8px;
+  padding-left: 40px;
+  padding-right: 17px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  color:$white-color;
+}
+
+/* DETAILS PAGE
+***********************************************************/
+
+
+.headTitle {
+  font-size: px-to-rem(42px);
+  font-weight: bold;
+  color:$fontColorResultsTable;
+  margin-bottom: 8px;
+  &+ul>li {
+    list-style-type: none;
+    display: inline-block;
+    color:$fontColorResultsTable;
+    font-size: px-to-rem(16px);
+    font-weight: 500;
+    margin-bottom: px-to-rem(24px);
+    &::after {
+      content:" | ";
+      color:$cardHeader;
+    }
+    &:last-child::after {
+      content:'';
+    }
+  }
+}
+
+.titleDetails {
+  color:$fontColorResultsTable;
+  font-size: px-to-rem(20px);
+  margin-top: auto;
+  font-weight:500;
+  position: relative;
+  @include rsd(px-to-rem(4px));
+}
+
+// styling analysis text
+
+.analysisDescription > li {
+  list-style-type: none;
+  margin-bottom: 25px;
+  &:nth-child(1) {
+    @include liItemImage('../images/opis.svg', 80px, 8px 0, )
+  }
+  &:nth-child(2) {
+    @include liItemImage('../images/uzorak.svg', 80px)
+  }
+  &:nth-child(3) {
+    @include liItemImage('../images/priprema.svg', 80px)
+  }
+  &:nth-child(4) {
+    @include liItemImage('../images/detaljanOpis.svg', 80px)
+  }
+}
+
+ul .sample {
+  list-style-type: none;
+  li {
+    margin-top: 6px;
+  }
+  & > .serum {
+    @include liItemImage('../images/serum.svg',30px);
+  }
+  & > .plazma {
+    @include liItemImage('../images/plazma.svg',30px);
+  }
+}
+
 
 
 /*FOOTER AREA
