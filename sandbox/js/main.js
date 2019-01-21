@@ -17,18 +17,16 @@ $(window).scroll(function(){
 // sticky navigation for side menu
 $(window).scroll(function(){
   var height = $(window).scrollTop();
-  // var footer = $('#footer').offset().top;
-  // var result = footer-height;
-// if (result<490) {
-    // console.log('height:'+height + ' ' + 'footer:'+footer);
-    // alert("sada???");
-  // }
-
-    if(height > 270) {
+    if(height > 120) {
       $(".odabraneAnalize").addClass('fixed-right');
+      $(".test").addClass('fixed-top fix');
+      $(".test").removeClass('searchFieldContainerInner');
+
     }
     else {
       $(".odabraneAnalize").removeClass('fixed-right');
+      $(".test").removeClass('fixed-top fix');
+      $(".test").addClass('searchFieldContainerInner ');
     }
 });
 
@@ -37,3 +35,10 @@ $('.backToTop').click(function(){
   $('html').animate({scrollTop:0}, 1200);
     return false;
 });
+
+// smooth scroll for sidebar menu
+$('#sideMenu a').click(function(e) {
+  e.preventDefault;
+  target = this.hash;
+  $('html').animate({scrollTop:$(target).offset().top-10},1200);
+  });
