@@ -9,6 +9,7 @@
 body {
   font-family: $font;
   font-size: 16px;
+  position:relative;
 }
 
 a:hover,
@@ -82,23 +83,21 @@ a:link{
 
 .fixed-right {
   position:sticky;
-  // width: inherit;
   animation-name: sideBarAnimation;
-  animation-duration: .3s;
+  animation-duration: .5s;
   animation-timing-function: linear;
   animation-fill-mode: forwards;
 }
 
 @keyframes sideBarAnimation {
-  0% {top: 5px;}
-  25% {top: 10px;}
-  50% {top: 15px;}
-  100% {top: 20px;}
+  0% {top: 10px;}
+  25% {top: 20px;}
+  50% {top: 30px;}
+  100% {top: 40px;}
 }
 
 .sidebar {
   position: relative;
-
 }
 
 /* SEARCH AREA
@@ -112,6 +111,13 @@ a:link{
 .searchFieldContainerInner {
   @extend .logoFull;
   margin-top: px-to-rem(105px); // put to 155 when button is inserted
+}
+
+
+.fix {
+  top:0px;
+  padding: 5px;
+  background-color: $primary-color;
 }
 
 //search field size
@@ -741,6 +747,12 @@ span.remove:hover{
 .analysisDescription > li {
   list-style-type: none;
   margin-bottom: 25px;
+  &>h5 {
+    color:$fontColorResultsTable;
+    // font-weight: bold;
+    font-size: px-to-rem(22px);
+  }
+
   &:nth-child(1) {
     @include liItemImage('../images/opis.svg', 80px, 8px 0, )
   }
@@ -748,9 +760,12 @@ span.remove:hover{
     @include liItemImage('../images/uzorak.svg', 80px)
   }
   &:nth-child(3) {
-    @include liItemImage('../images/priprema.svg', 80px)
+    @include liItemImage('../images/kadaSeIspituje.svg', 80px)
   }
   &:nth-child(4) {
+    @include liItemImage('../images/priprema.svg', 80px)
+  }
+  &:nth-child(5) {
     @include liItemImage('../images/detaljanOpis.svg', 80px)
   }
 }
@@ -768,6 +783,130 @@ ul .sample {
   }
 }
 
+.textList {
+  padding-left: 18px;
+}
+
+.lead {
+  margin-top:40px;
+  margin-bottom: 40px;
+  color:$fontColorResultsTable;
+  font-size: px-to-rem(20px);
+    &::before {
+    content:'';
+    border-left:5px solid $primary-color;
+    margin-top: 20px;
+    padding-top: 16px;
+    padding-right: 16px;
+    padding-bottom: 16px;
+  }
+}
+
+.snizeneVrednosti {
+  background: url(../images/zeleno.svg) 0 0 no-repeat;
+  background-size: cover;
+  color:$fontColorResultsTable;
+  padding: 20px;
+  border-bottom:10px solid rgba(26,233,182,.5);
+  &>h4 {
+  font-size: 22px;
+  color:000;
+  opacity: .7;
+  &::before {
+    content: url(../images/snizeneVrednosti.svg);
+    padding-right: 8px;
+    }
+  }
+}
+
+.poviseneVrednosti {
+  background: url(../images/crveno.svg) 0 0 no-repeat;
+  background-size: cover;
+  color:$fontColorResultsTable;
+  padding: 20px;
+  border-bottom:10px solid rgba(255,59,59,0.5);
+  & > h4 {
+  font-size: 22px;
+  color:000;
+  opacity: .7;
+  &::before {
+    content: url(../images/poviseneVrednosti.svg);
+    padding-right: 8px;
+    }
+  }
+}
+
+.napomena {
+  background-color: $primary-color;
+  margin-top: 40px;
+  padding: 20px;
+  border-radius: 5px;
+  color:$white-color;
+  & > h5 {
+  font-size: px-to-rem(22px);
+  font-weight: 400;
+    &::before {
+    content:url(../images/napomena.svg);
+    padding-right: 8px;
+    }
+  }
+}
+
+.flexFix {
+  flex:1 1 0;
+}
+
+ol {
+    .literatura {
+    margin-top: 30px;
+    padding-bottom: 20px;
+    margin-bottom: 16px;
+    // font-weight: bold;
+    font-size: px-to-rem(22px);
+    color:$fontColorResultsTable;
+    border-bottom: 1px solid rgba(151,151,151,.2);
+    // opacity: 0.6;
+  }
+  li {
+   line-height: 28px;
+   color:$fontColorResultsTable;
+   font-size: 14px;
+   opacity: .6;
+   margin-left: 16px;
+ }
+ &::after {
+   content:"";
+   display: block;
+   margin-top: 20px;
+   border-bottom: 1px solid rgba(151,151,151,.2);
+ }
+}
+
+.fa-angle-down {
+    color:$fontColorResultsTable;
+    opacity: .6;
+    float:right;
+    font-size: px-to-rem(22px);
+}
+
+#sideMenu > .textList {
+  list-style-type: none;
+  padding-left: 0;
+  .list-group-item {
+    border:0;
+    padding: px-to-rem(3px) px-to-rem(16px);
+    font-size: 1rem;
+    color: $fontColorResultsTable;
+    opacity: .8;
+    &.active {
+      background-color: transparent;
+      border-left:4px solid $primary-color;
+      color: $primary-color;
+      padding-left: 12px;
+      border-radius: 0;
+    }
+  }
+}
 
 
 /*FOOTER AREA
