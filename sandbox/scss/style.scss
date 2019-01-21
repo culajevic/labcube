@@ -685,7 +685,7 @@ span.remove:hover{
 }
 
 .bannerTumacenjeAnaliza {
-  // min-width: 255px;
+  // max-width: 255px;
   width: 100%;
   min-height: 188px;
   position: relative;
@@ -906,6 +906,32 @@ ol {
       border-radius: 0;
     }
   }
+}
+
+.povezaneAnalize {
+  h5 {
+    margin: 24px 0;
+    font-size: px-to-rem(22px);
+  }
+  li {
+    list-style-type: none;
+    display: inline-block;
+    float:left;
+    background-color: $primary-color;
+    padding: 10px 20px;
+    margin-right: 20px;
+    border-radius: 30px;
+    margin-bottom: 15px;
+    color:$white-color;
+    &:hover {
+      cursor: pointer;
+      opacity: .8;
+    }
+    &:nth-child(even) {
+      background-color: rgba(29,136,229,.6);
+    }
+  }
+
 }
 
 
