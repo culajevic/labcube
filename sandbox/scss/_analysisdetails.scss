@@ -1,0 +1,222 @@
+.headTitle {
+  font-size: px-to-rem(42px);
+  font-weight: bold;
+  color:$fontColorResultsTable;
+  margin-bottom: px-to-rem(8px);
+  &+ul>li {
+    list-style-type: none;
+    display: inline-block;
+    color:$fontColorResultsTable;
+    font-weight: 500;
+    margin-bottom: px-to-rem(24px);
+    &::after {
+      content:" | ";
+      color:$cardHeader;
+    }
+    &:last-child::after {
+      content:'';
+    }
+  }
+}
+
+.titleDetails {
+  color:$fontColorResultsTable;
+  font-size: px-to-rem(20px);
+  margin-top: auto;
+  font-weight:500;
+  position: relative;
+  @include rsd(px-to-rem(4px));
+}
+
+// styling analysis text
+.analysisDescription > li {
+  list-style-type: none;
+  margin-bottom: px-to-rem(25px);
+  &>h5 {
+    color:$fontColorResultsTable;
+    font-size: px-to-rem(22px);
+  }
+  &:nth-child(1) {
+    @include liItemImage('../images/opis.svg', 80px, 8px 0, )
+  }
+  &:nth-child(2) {
+    @include liItemImage('../images/uzorak.svg', 80px)
+  }
+  &:nth-child(3) {
+    @include liItemImage('../images/kadaSeIspituje.svg', 80px)
+  }
+  &:nth-child(4) {
+    @include liItemImage('../images/priprema.svg', 80px)
+  }
+  &:nth-child(5) {
+    @include liItemImage('../images/detaljanOpis.svg', 80px)
+  }
+}
+
+.literatura:nth-child(1) {
+  @include liItemImage('../images/literatura.svg', 80px)
+  line-height: px-to-rem(40px);
+}
+
+// ul .sample {
+//   list-style-type: none;
+//   li {
+//     margin-top: 6px;
+//   }
+//   & > .serum {
+//     @include liItemImage('../images/serum.svg',30px);
+//   }
+//   & > .plazma {
+//     @include liItemImage('../images/plazma.svg',30px);
+//   }
+// }
+
+.textList {
+  padding-left: px-to-rem(18px);
+}
+
+.lead {
+  margin:px-to-rem(40px) 0;
+  color:$fontColorResultsTable;
+  font-size: px-to-rem(20px);
+    &::before {
+    content:'';
+    border-left:5px solid $primary-color;
+    margin-top: px-to-rem(20px);
+    padding-top: px-to-rem(16px);
+    padding-right: px-to-rem(16px);
+    padding-bottom: px-to-rem(16px);
+  }
+}
+
+.snizeneVrednosti {
+  @include results('../images/zeleno.svg',rgba(26,233,182,.5));
+  &>h5 {
+  font-size: 22px;
+  color:$fontColorResultsTable;
+  opacity: .9;
+  &::before {
+    content: url(../images/snizeneVrednosti.svg);
+    padding-right: 8px;
+    }
+  }
+}
+
+.poviseneVrednosti {
+  @include results('../images/crveno.svg',rgba(255,59,59,0.5));
+  &>h5 {
+  font-size: 22px;
+  color:$fontColorResultsTable;
+  opacity: .9;
+  &::before {
+    content: url(../images/poviseneVrednosti.svg);
+    padding-right: 8px;
+    }
+  }
+}
+
+.napomena {
+  background-color: $primary-color;
+  margin-top: px-to-rem(40px);
+  padding: px-to-rem(20px);
+  border-radius: 5px;
+  color:$white-color;
+  & > h5 {
+  font-size: px-to-rem(22px);
+  font-weight: 400;
+    &::before {
+    content:url(../images/napomena.svg);
+    padding-right: 8px;
+    }
+  }
+}
+
+.flexFix {
+  flex:1 1 0;
+}
+
+ol {
+    .literatura {
+    margin-bottom: px-to-rem(16px);
+    margin-top: px-to-rem(30px);
+    padding-bottom: px-to-rem(16px);
+    font-size: px-to-rem(22px);
+    color:$fontColorResultsTable;
+    border-bottom: 1px solid rgba(151,151,151,.2);
+    }
+    li {
+     line-height: px-to-rem(28px);
+     color:$fontColorResultsTable;
+     font-size: px-to-rem(14px);
+     opacity: .6;
+     margin-left: px-to-rem(16px);
+     padding-left: px-to-rem(12px);
+   }
+     &::after {
+       content:"";
+       display: block;
+       margin-top: px-to-rem(20px);
+       border-bottom: 1px solid rgba(151,151,151,.2);
+     }
+}
+
+.fa-angle-down,
+.fa-angle-up {
+    color:$fontColorResultsTable;
+    opacity: .6;
+    float:right;
+    font-size: px-to-rem(22px);
+}
+
+#sideMenu > .textList {
+  list-style-type: none;
+  padding-left: 0;
+  .list-group-item {
+    border:0;
+    padding: px-to-rem(3px) px-to-rem(16px);
+    font-size: 1rem;
+    color: $fontColorResultsTable;
+    opacity: .8;
+    &.active {
+      background-color: transparent;
+      border-left:4px solid $primary-color;
+      color: $primary-color;
+      padding-left: px-to-rem(12px);
+      border-radius: 0;
+    }
+    &:hover:not(.active) {
+        opacity: .5;
+    }
+    &:active{
+      text-decoration: none;
+    }
+  }
+}
+
+.povezaneAnalize {
+  h5 {
+    margin: px-to-rem(24px) 0;
+    font-size: px-to-rem(22px);
+  }
+  li {
+    list-style-type: none;
+    display: inline-block;
+    float:left;
+    background-color: $primary-color;
+    padding: px-to-rem(10px) px-to-rem(20px);
+    margin-right: px-to-rem(20px);
+    border-radius: px-to-rem(30px);
+    margin-bottom: px-to-rem(15px);
+    color:$white-color;
+    &:hover {
+      cursor: pointer;
+      opacity: .8;
+    }
+    &:nth-child(even) {
+      background-color: rgba(29,136,229,.6);
+    }
+    &:last-child{
+      margin-bottom: px-to-rem(40px);
+    }
+  }
+}

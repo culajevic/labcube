@@ -1,0 +1,47 @@
+.logoFull {
+  align-self: center;
+  position:absolute;
+}
+
+.fa-map-marker-alt,
+.fa-user,
+.fa-comments {
+  padding-right: px-to-rem(9px);
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: $white-color;
+}
+
+.fixed-top-background {
+  	background: radial-gradient(circle, $secondary-color 0%, $primary-color 100%);
+    animation-name: navanimation;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes  navanimation {
+  0% {opacity: 0.1;}
+  50% {opacity: 0.5;}
+  100% {opacity: 0.9;}
+}
+
+.fixed-right {
+  position:sticky;
+  animation-name: sideBarAnimation;
+  animation-duration: .5s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes sideBarAnimation {
+  0% {top: 10px;}
+  25% {top: 20px;}
+  50% {top: 30px;}
+  100% {top: 40px;}
+}
+
+.sidebar {
+  position: relative;
+}

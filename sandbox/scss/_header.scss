@@ -1,0 +1,22 @@
+#header {
+  display:flex;
+  flex-direction:column;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 501px;
+	background: radial-gradient(circle, $secondary-color 0%, $primary-color 100%);
+    .navbar-nav{
+      a {
+        padding-right: px-to-rem(16px);
+      }
+    }
+    .container {
+      margin-bottom: auto;
+    }
+}
+
+#smallHeader {
+  @extend #header;
+  height: 210px;
+}

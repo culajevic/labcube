@@ -1,0 +1,176 @@
+#googleMap {
+  position: relative;
+  width: 100%;
+}
+
+#map {
+  height: 790px;
+}
+
+
+// google map header
+.labinfo  {
+  position:absolute;
+  top:0;
+  left:0;
+  background-color: $primary-color;
+  opacity:0.8;
+  height: px-to-rem(83px);
+  width:100%;
+}
+
+.mapTitle {
+  line-height: px-to-rem(83px);
+  color:$white-color;
+  font-size: px-to-rem(30px);
+}
+
+.labMapInfo {
+  color:$white-color;
+  font-size: px-to-rem(11px);
+  text-transform: uppercase;
+}
+
+// numbers counter
+.num {
+  color:$white-color;
+  opacity: 0;
+}
+.numOn {
+  opacity:1;
+  color:$white-color;
+  font-size: px-to-rem(20px);
+  font-weight: 500;
+}
+
+
+/* google map infowindow
+***************************************************************/
+
+#labInfoWindow {
+  width: px-to-rem(310px);
+  height: px-to-rem(146px);
+  padding-top: px-to-rem(12px);
+  padding-left: px-to-rem(12px);
+}
+
+.labInfoWindowTitle {
+  font-size: 1rem;
+  color:$primary-color;
+  font-weight: 500;
+  line-height: px-to-rem(19px);
+}
+
+.labInfoWindowFooter {
+  background-color: $primary-color;
+  height: px-to-rem(36px);
+  position: absolute;
+  bottom: px-to-rem(17px);
+  left: 0;
+  width: px-to-rem(333px);
+  color:$white-color;
+  padding-left: px-to-rem(12px);
+  border-bottom-left-radius: px-to-rem(4px);
+  & > .radnoVreme {
+    display: inline-block;
+    padding-top: px-to-rem(11px);
+    font-size: px-to-rem(12px);
+    font-weight: 500;
+  }
+  & > .status {
+    display: inline-block;
+    float:right;
+    padding-top: px-to-rem(10px);
+    padding-right: px-to-rem(12px);
+    font-weight: 500;
+    &::before {
+      content:'';
+      width: px-to-rem(10px);
+      height: px-to-rem(10px);
+      border-radius: px-to-rem(20px);
+      background-color: $button-green;
+      float:left;
+      margin-right: px-to-rem(8px);
+      margin-top: px-to-rem(3px);
+    }
+  }
+}
+
+.radnoVremeDetalji {
+  display: block;
+  height: px-to-rem(150px);
+  top:px-to-rem(-114.4px);
+  right:0;
+  width:px-to-rem(110px);
+  opacity: 0;
+  z-index: -9;
+  transition: .3s linear;
+  background-color: $primary-color;
+  position: absolute;
+  & > p {
+    display: inline-block;
+    line-height: px-to-rem(18px);
+    font-weight: 500;
+    padding-left: px-to-rem(6px);
+    margin-bottom: px-to-rem(4px);
+    &.active {
+      background-color: $button-green;
+      width: 100%;
+      color:$infoWindowContactColor;
+      font-weight: 900;
+    }
+  & > span {
+    display: inline-block;
+    padding-left: px-to-rem(10px);
+    }
+  }
+}
+
+
+.labInfoWindowFooter:hover {
+  cursor:pointer;
+    & .radnoVremeDetalji {
+        opacity: .8;
+        border-top-right-radius: px-to-rem(4px);
+        border-bottom-right-radius: px-to-rem(4px);
+        right:-110px;
+      }
+}
+
+.labInfoWindowWorkingHoursIcon {
+  margin: px-to-rem(10px) px-to-rem(8px) 0 px-to-rem(4px);
+  float:left;
+}
+
+.labInfoWindowVerified {
+  padding-right: px-to-rem(12px);
+  margin-bottom: px-to-rem(6px);
+}
+
+.labLogoInfoWindow {
+  height: px-to-rem(53px);
+  width: px-to-rem(48px);
+  float:left;
+  margin-right: px-to-rem(8px);
+}
+
+.labInfoWindowContactGroup {
+  margin-top:px-to-rem(8px);
+}
+
+.labInfoWindowAdresa,
+.labInfoWindowGrad,
+.labInfoWindowTelefoni ,  {
+  font-size: px-to-rem(13px);
+  line-height: px-to-rem(17px);
+  display: block;
+  margin-bottom: px-to-rem(2px);
+  font-weight: 500;
+  color:$infoWindowContactColor;
+}
+
+.gm-style-iw {
+background-color: $white-color;
+border-top-left-radius: px-to-rem(4px);
+border-bottom-left-radius: px-to-rem(4px);
+}

@@ -1,0 +1,173 @@
+#results {
+  margin-top: px-to-rem(80px);
+  margin-bottom: px-to-rem(150px);
+  .btn-success {
+    margin-bottom: 0;
+  }
+  .btn {
+    font-size: px-to-rem(12px);
+    padding: px-to-rem(6px) px-to-rem(25px);
+  }
+}
+
+#details {
+  @extend #results;
+}
+
+.results tr:first-child>td{
+  border-top:0px;
+}
+
+// styling first td inside table with results
+.results tr>td {
+  &:first-child {
+  max-width: px-to-rem(280px);
+  font-weight: 500;
+  cursor:pointer;
+  }
+  // styling vertical ling between first 2 tds
+  &:nth-child(2)::before {
+    content:'';
+    position: absolute;
+    height: px-to-rem(63px);
+    border-left: 1px solid #E1E1E1;
+    padding-right: px-to-rem(20px);
+    left:px-to-rem(-8px);
+    bottom:px-to-rem(12px);
+  }
+  &:nth-child(4) {
+    cursor:pointer;
+  }
+}
+
+// styling td height and adding RSD as text after price
+td {
+  height: px-to-rem(88px);
+  position: relative;
+  color:$fontColorResultsTable;
+  &>span {
+    @include rsd(px-to-rem(37px));
+  }
+}
+
+.table th,
+.table td {
+  vertical-align: middle;
+}
+
+.table-hover tbody tr:hover td {
+	background-color: $tableHover;
+}
+
+// styling odabrane analize card
+.card-header {
+  font-weight: 500;
+  color: $cardHeader;
+  background-color: $tableHover;
+  padding:0 0.7rem;
+  padding-top: px-to-rem(16px);
+  padding-bottom: px-to-rem(8px);
+  vertical-align: bottom;
+  &:after{
+    content:url(../images/odabraneAnalize.svg);
+    float:right;
+  }
+}
+.removeItem {
+  float:right;
+}
+
+.list-group-item {
+  font-size: px-to-rem(12px);
+  color: #666;
+  padding-left: 0.7rem;
+}
+
+// styling select text
+.odabraneAnalize .form-control {
+  padding-left: px-to-rem(20px);
+  padding-top: px-to-rem(3px);
+  height: px-to-rem(32px);
+  color: $fontColorResultsTable;
+  opacity: .5;
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+.form-control:focus{
+    border-color: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.city {
+  position:relative;
+}
+
+.cityMarker {
+  position:absolute;
+  top:px-to-rem(48px);
+  display: inline-block;
+  left:px-to-rem(20px);
+}
+
+.labGroupIconSelectedAnalysis {
+  width: px-to-rem(13px);
+  height: px-to-rem(13px);
+  margin-right: px-to-rem(6px);
+}
+
+span.remove:hover{
+  cursor:pointer;
+}
+
+// arrow color for tooltip
+.bs-tooltip-auto[x-placement^=bottom] .arrow::before,
+.bs-tooltip-bottom .arrow::before {
+  border-bottom-color: $tooltipBorder;
+}
+
+.tooltip-inner {
+  background-color: $white-color !important;
+  color: $fontColorResultsTable;
+  border:1px solid $tooltipBorder;
+  font-size: 16px;
+  max-width: 350px;
+  padding: 16px;
+  text-align:justify;
+}
+
+.banner {
+  position:relative;
+  .btnBanner {
+    position:absolute;
+    right:px-to-rem(10px);
+    top:px-to-rem(115px);
+    font-size: 10px !important;
+    padding-left:px-to-rem(12px) !important;
+    padding-right:px-to-rem(12px) !important;
+  }
+}
+
+.bannerTumacenjeAnaliza {
+  width: 100%;
+  min-height: px-to-rem(188px);
+  position: relative;
+}
+
+.bannerOverlay {
+  background: url(../images/plaviOver.svg) no-repeat;
+  position:absolute;
+  right:0;
+  top:0;
+  width: px-to-rem(143px);
+  height: px-to-rem(141px);
+  padding-top: px-to-rem(8px);
+  padding-left: px-to-rem(40px);
+  padding-right: px-to-rem(17px);
+  font-size: px-to-rem(14px);
+  font-weight: 500;
+  line-height: px-to-rem(18px);
+  color:$white-color;
+}

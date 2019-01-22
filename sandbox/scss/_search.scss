@@ -1,0 +1,105 @@
+.searchFieldContainer {
+  @extend .logoFull;
+  margin-top: px-to-rem(147px);
+}
+
+.searchFieldContainerInner {
+  @extend .logoFull;
+  margin-top: px-to-rem(105px);
+}
+
+.fix {
+  top:0px;
+  padding: px-to-rem(5px);
+  background-color: $primary-color;
+}
+
+.search {
+  position:relative;
+  height: px-to-rem(50px);
+}
+
+.searchInner {
+  position:relative;
+  top: px-to-rem(55px);
+  left:0;
+  height: px-to-rem(50px);
+}
+
+.fa-play-circle {
+  font-size: px-to-rem(38px);
+  color:white;
+  position: absolute;
+  top:px-to-rem(6px);
+  left: px-to-rem(214px);
+}
+
+.btn-outline-warning {
+  color:$white-color;
+  border-color:$white-color;
+  font-size: px-to-rem(22px);
+  padding-right: px-to-rem(64px);
+  &:active {
+    color:$white-color;
+    border-color:$white-color;
+    border:1px solid $button-green !important;
+    background-color: $button-green !important;
+  }
+  &:hover {
+    color:$white-color;
+    background-color: $button-green;
+    border-color:$button-green;
+  }
+  &:focus {
+    color:$white-color !important;
+    box-shadow: rgba(85,209,89,0.4) 0px 0px 0px 0px !important;
+  }
+}
+
+.labCubeDemoBtn {
+  margin-top: px-to-rem(34px);
+  position:relative;
+}
+
+//disable radio buttons
+input[name="searchFilter"] {
+  display: none;
+  &:checked + label {
+    font-weight:bold;
+    color:$primary-color;
+    opacity: 1;
+  }
+  &+label {
+    opacity: 0.5;
+  }
+}
+
+%searchHelperClass {
+  position: absolute;
+  top:0;
+  color:$primary-color;
+  line-height: px-to-rem(53px);
+  text-transform: uppercase;
+  font-weight: 500;
+    &:hover {
+      cursor: pointer;
+      color:$secondary-color;
+    }
+}
+
+.analizeSearchFilter {
+  @extend %searchHelperClass;
+  right: px-to-rem(145px);
+  &::after {
+    content:" | ";
+    color:$primary-color;
+    padding-left: px-to-rem(3px);
+  }
+}
+
+.laboratorijeSearchFilter {
+  @extend %searchHelperClass;
+  right: px-to-rem(25px);
+  padding-left: px-to-rem(3px);
+  opacity: 0.5;
+}

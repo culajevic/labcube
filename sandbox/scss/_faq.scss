@@ -1,0 +1,47 @@
+#faq {
+  margin-top:px-to-rem(40px);
+  min-height: px-to-rem(640px);
+  & h2 {
+    color:$primary-color;
+    margin-bottom: px-to-rem(40px);
+  }
+}
+
+#accordion > h5 {
+    color:#042A37;
+    padding: px-to-rem(16px) 0;
+    padding-right: .7rem;
+    border-bottom:1px solid $line-color;
+    margin-bottom: 0;
+    &:hover {
+      cursor: pointer;
+      background-color: $accordionHover;
+    }
+}
+
+#accordion > div p {
+  padding-top: px-to-rem(16px);
+}
+
+// faq colapsed section
+#accordion > [data-toggle="collapse"].collapsed::after {
+  font-family: 'Font Awesome 5 Free';
+  content: "\f0fe";
+}
+
+// faq expanded section
+#accordion > [data-toggle="collapse"]::after {
+  font-family: 'Font Awesome 5 Free';
+  content: "\f146";
+  padding-right: px-to-rem(8px);
+  float: right;
+}
+
+#accordion h5:last-of-type {
+  border-bottom:none;
+}
+
+.fa-arrow-circle-up {
+  font-size: px-to-rem(18px);
+  padding-left: px-to-rem(8px);
+}
