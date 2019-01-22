@@ -79,7 +79,7 @@
 <section id="details">
   <div class="container">
     <div class="row">
-      <div class="col-lg-9">
+      <div class="col-md-8 col-lg-9">
         <!-- header -->
         <p class="float-right">
           <span class="titleDetails ml-1">750 - 1500</span>
@@ -152,7 +152,7 @@
               </ul>
             </p>
           </li>
-          <div class="d-flex flex-column flex-md-row">
+          <div class="d-flex flex-column flex-lg-row">
              <div class="flexFix justify-content-between snizeneVrednosti">
                 <h5 id="rezultati">Snižene vrednosti</h5>
                <p>Snižene vrednosti se mogu javiti kod:</p>
@@ -166,9 +166,8 @@
                 <h5>Povišene vrednosti</h5>
                 <p>Povišene vrednosti triglicerida se javljaju usled poremećaja u samom metabolizmu lipida i lipoproteina, kao što su hiperlipoproteinemije tip I, IIb, II, IV i V.Ovi poremećaji metabolizma mogu biti urođeni ili stečeni.</p>
               <!-- this section expands if thext is bigger then xxx number of characters -->
-
-                <a class="expandDetails" data-toggle="collapse" href="#collapseExample"><i class="fas fa-angle-down"></i></a>
-                <div class="collapse mt-2" id="collapseExample">
+                <a class="expandDetails" data-toggle="collapse" href="#collapsedDetails"><i class="fas fa-angle-down"></i></a>
+                <div class="collapse mt-2" id="collapsedDetails">
                   <p >Povišene vrednosti se mogu javitii kod sledećih patoloških stanja: </p>
                   <ul class="textList">
                     <li>dijabetes melitusa</li>
@@ -200,6 +199,7 @@
              <li>Spasić S.,Jelić-Ivanović Z.,Spasojević-Kalimanovska V. Medicinska biohemija,Beograd,2003</li>
              <li>Tietz NW, ed. Clinical guide to laboratory tests, 3rd ed. Philadelphia: WB Saunders Company, 1995: 610-611. 2.</li>
              <li>Riesen WF. Lipid metabolism. In: Thomas L, ed. Clinical laboratory diagnostics. Use and assessment of clinical laboratory results. Frankfurt/Main: TH-Books Verlagsgesellschaft, 1998:169-171.</li>
+
            <!-- </div> -->
            </ol>
         </ul><!-- analysisDescription end -->
@@ -218,13 +218,13 @@
 
       </div> <!-- col-lg-9 -->
 
-      <div class="col-md-12 col-lg-3 sidebar">
+      <div class="col-md-4 col-lg-3 sidebar">
         <div class="odabraneAnalize">
           <div class="card ">
-            <div class="card-header">Odabrane analize (7)</div>
+            <div class="card-header">Odabrane analize (5)</div>
               <ul class="list-group list-group-flush">
-                <li class="list-group-item list-group-item-action"><img src="images/hematologija.svg" class="labGroupIconSelectedAnalysis">Cras justo odio<span class="float-right remove"><img src="images/closeBtn.svg"></span></li>
-                <li class="list-group-item list-group-item-action"><img src="images/feces.svg" class="labGroupIconSelectedAnalysis">Dapibus ac dad da facilisis in<span class="float-right remove"><img src="images/closeBtn.svg"></span></li>
+                <li class="list-group-item list-group-item-action"><img src="images/hematologija.svg" class="labGroupIconSelectedAnalysis">Ukupni trigliceridi<span class="float-right remove"><img src="images/closeBtn.svg"></span></li>
+                <li class="list-group-item list-group-item-action"><img src="images/feces.svg" class="labGroupIconSelectedAnalysis">Dapibus ac dad da facilisi<span class="float-right remove"><img src="images/closeBtn.svg"></span></li>
                 <li class="list-group-item list-group-item-action"><img src="images/biohemija.svg" class="labGroupIconSelectedAnalysis">Vestibulum at eros<span class="float-right remove"><img src="images/closeBtn.svg"></span></li>
                 <li class="list-group-item list-group-item-action"><img src="images/biohemija.svg" class="labGroupIconSelectedAnalysis">Vestibulum at eros<span class="float-right remove"><img src="images/closeBtn.svg"></span></li>
                 <li class="list-group-item list-group-item-action"><img src="images/anemije.svg" class="labGroupIconSelectedAnalysis">Vestibulum at eros<span class="float-right remove"><img src="images/closeBtn.svg"></span></li>
@@ -373,19 +373,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
 <script>
   $(document).ready(function(){
-
-    $('[data-toggle="tooltip"]').tooltip({placement:"bottom", delay: {show: 100, hide: 100}, boundary: 'window'});
-
-    $('.results tr>td>img.tooltipImg').hover(function(){
-      var test = $(this).attr('src');
-      if (test == 'images/detail.svg') {
-        $(this).attr('src','images/detail_mv.svg');
-      }
-      else {
-        $(this).attr('src', 'images/detail.svg');
-      }
-    });
-
+    // sidebar scrollspy
     $('body').scrollspy({ target: '#sideMenu'})
   });
 </script>
