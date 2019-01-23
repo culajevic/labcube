@@ -42,3 +42,13 @@ $('#sideMenu a').click(function(e) {
   target = this.hash;
   $('html').animate({scrollTop:$(target).offset().top-10},1200);
   });
+
+//rotate arrow up and down on snizene vrednosti div
+$('.fa-angle-down').click(function(){
+  if($(this).hasClass('rotate')) {
+     $(this).removeClass('rotate');
+  }
+  else {
+    $(this).addClass('rotate');
+  }
+})
