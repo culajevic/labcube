@@ -17,6 +17,7 @@
 .search {
   position:relative;
   height: px-to-rem(50px);
+  z-index: 5;
 }
 
 .searchInner {
@@ -68,6 +69,7 @@ input[name="searchFilter"] {
     font-weight:bold;
     color:$primary-color;
     opacity: 1;
+
   }
   &+label {
     opacity: 0.5;
@@ -77,6 +79,7 @@ input[name="searchFilter"] {
 %searchHelperClass {
   position: absolute;
   top:0;
+  z-index: 5;
   color:$primary-color;
   line-height: px-to-rem(53px);
   text-transform: uppercase;
