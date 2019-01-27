@@ -187,3 +187,115 @@ background-color: $white-color;
 border-top-left-radius: px-to-rem(4px);
 border-bottom-left-radius: px-to-rem(4px);
 }
+
+/* lab search results
+*********************************************************/
+
+#labDetails {
+  margin-top: 60px;
+  padding-top: 20px;
+  z-index: 50;
+  align-items: center;
+  width: 100%;
+}
+
+.lab-card {
+  border:1px solid $labBoxBorder;
+  background-color: $white-color;
+  opacity: .95;
+  margin-right: 15px;
+  margin-bottom: 16px;
+  padding: 16px;
+  display: flex;
+  flex:1 1 0;
+  flex-direction: column;
+  min-width: 255px;
+  position: relative;
+}
+
+.labInfoFooter {
+  height: px-to-rem(36px);
+  color:$fontColorResultsTable;
+  margin-bottom: 8px;
+  border-bottom: 1px solid rgba(31,31,31,.1);
+  cursor:pointer;
+  &:hover .labInfoRadnoVremeDetalji{
+    opacity: .8;
+    cursor: pointer;
+  }
+  & > .radnoVreme {
+    display: inline-block;
+    padding-top: px-to-rem(11px);
+    font-size: px-to-rem(12px);
+    font-weight: 500;
+    color:$infoWindowContactColor;
+  }
+  & > .status {
+    display: inline-block;
+    float:right;
+    padding-top: px-to-rem(10px);
+    padding-right: 4px;
+    padding-bottom: 5px;
+    font-weight: 500;
+    font-size: 12px;
+    color:$infoWindowContactColor;
+    &::before {
+      content:'';
+      width: px-to-rem(10px);
+      height: px-to-rem(12px);
+      border-radius: px-to-rem(20px);
+      background-color: $button-green;
+      float:left;
+      margin-right: px-to-rem(8px);
+      margin-top: px-to-rem(3px);
+    }
+  }
+}
+
+.btnLabDetails {
+  background-color: $button-green;
+  color:$white-color;
+  text-transform: uppercase;
+  font-size: px-to-rem(14px);
+  &:hover {
+    background-color: $primary-color;
+  }
+}
+
+.labInfoRadnoVremeDetalji {
+  display: block;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  opacity: 0;
+  z-index: 9;
+  transition: .3s linear;
+  background-color: $primary-color;
+  position:absolute;
+  top:0px;
+  left:0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  h5 {
+    color:$white-color;
+    margin-top: 10px;
+  }
+  & > p {
+    margin-bottom: px-to-rem(4px);
+    color:$white-color;
+    font-size: 14px;
+    font-weight: 500;
+    &.active {
+      background-color: $button-green;
+      width: 100%;
+      color:$infoWindowContactColor;
+      font-weight: bold;
+      margin: 0;
+      padding: 5px;
+    }
+  & > span {
+    display: inline-block;
+    padding-left: px-to-rem(10px);
+    }
+  }
+}

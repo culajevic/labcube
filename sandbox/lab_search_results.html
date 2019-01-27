@@ -63,9 +63,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="row">
         <div class="col-sm-12 col-lg-8 mx-auto ">
           <input type="text" class="form-control search"  placeholder="Unesite naziv analize/laboratorije">
-          <input type="radio" name="searchFilter" id="analizeRadioButton" value="analiza" checked>
+          <input type="radio" name="searchFilter" id="analizeRadioButton" value="analiza">
             <label for="analizeRadioButton" class="analizeSearchFilter">analiza</label>
-          <input type="radio" name="searchFilter" id="laboratorijeRadioButton" value="laboratorija" >
+          <input type="radio" name="searchFilter" id="laboratorijeRadioButton" value="laboratorija" checked>
             <label for="laboratorijeRadioButton" class="laboratorijeSearchFilter">laboratorija</label>
         </div> <!-- searchField -->
       </div><!-- row -->
@@ -77,6 +77,272 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div id="map"></div>
 </section><!-- google map end -->
 
+<section id="labDetails">
+  <div class="container">
+    <div class="row ">
+
+      <div class="col-12 d-flex flex-row flex-wrap">
+      <!-- primer za stranicu sa ispisom cena -->
+        <!-- <div class="lab-card">
+          <div>
+             <img src="images/osiguranje.svg" class="labInfoWindowOsiguranje" title="privatno osiguranje">
+             <img src="images/verified.svg" class="labInfoWindowVerified" title="akreditovana laboratorija">
+             <span class="labInfoWindowTitle">Beolab</span>
+         </div>
+           <div class="labInfoWindow">
+               <img src="images/placeholder.svg" class="labLogoInfoWindow">
+               <p class="labInfoWindowAdresa">Bulevar Arsenija Čarnojevića 123/a </p>
+               <p class="labInfoWindowGrad">Beograd - Vidikovac</p>
+               <p class="labInfoWindowTelefoni">011/7886742, 064/1234567</p>
+           </div>
+           <div class="labInfoFooter">
+               <img src="images/radnoVreme_black.svg" class="labInfoWindowWorkingHoursIcon">
+               <div class="radnoVreme">Radno vreme</div>
+               <div class="status">otvoreno</div>
+            </div>
+            <div class="">
+              <span class="total">Ukupna cena: <span class="cena">1250 RSD</span></span>
+            </div>
+            <button type="button" class="btn btn-primary btn-block clickMore mt-2">detaljnije</button>
+         </div> -->
+
+         <div class="lab-card ">
+           <div>
+              <!-- <img src="images/osiguranje.svg" class="labInfoWindowOsiguranje" title="privatno osiguranje"> -->
+              <img src="images/verified.svg" class="labInfoWindowVerified" title="akreditovana laboratorija">
+              <span class="labInfoWindowTitle">Beolab</span>
+          </div>
+            <div class="labInfoWindow">
+                <img src="images/placeholder.svg" class="labLogoInfoWindow">
+                <p class="labInfoWindowAdresa">Ljube Nešića bb </p>
+                <p class="labInfoWindowGrad">Beograd - Vidikovac</p>
+                <p class="labInfoWindowTelefoni">011/7886742, 064/1234567</p>
+            </div>
+            <div class="labInfoFooter">
+                <img src="images/radnoVreme_black.svg" class="labInfoWindowWorkingHoursIcon">
+                <div class="radnoVreme">Radno vreme</div>
+                <div class="status">otvoreno</div>
+                <div class="labInfoRadnoVremeDetalji">
+                  <p class="daysInWeek text-center">P<span>08:00 - 21:00</span></p>
+                  <p class="daysInWeek text-center">U<span>08:00 - 21:00</span></p>
+                  <p class="daysInWeek text-center">S<span>08:00 - 21:00</span></p>
+                  <p class="daysInWeek text-center active">Č<span>08:00 - 21:00</span></p>
+                  <p class="daysInWeek text-center">P<span>08:00 - 21:00</span></p>
+                  <p class="daysInWeek text-center">S<span>08:00 - 21:00</span></p>
+                  <p class="daysInWeek text-center">N<span>08:00 - 21:00</span></p>
+
+                </div>
+             </div>
+             <button type="button" class="btn btn-block btnLabDetails mt-2">saznaj više</button>
+          </div>
+          <div class="lab-card ">
+            <div>
+               <img src="images/osiguranje.svg" class="labInfoWindowOsiguranje" title="privatno osiguranje">
+               <img src="images/verified.svg" class="labInfoWindowVerified" title="akreditovana laboratorija">
+               <span class="labInfoWindowTitle">Beolab</span>
+           </div>
+             <div class="labInfoWindow">
+                 <img src="images/placeholder.svg" class="labLogoInfoWindow">
+                 <p class="labInfoWindowAdresa">Ljube Nešića bb </p>
+                 <p class="labInfoWindowGrad">Beograd - Vidikovac</p>
+                 <p class="labInfoWindowTelefoni">011/7886742, 064/1234567</p>
+             </div>
+             <div class="labInfoFooter">
+                 <img src="images/radnoVreme_black.svg" class="labInfoWindowWorkingHoursIcon">
+                 <div class="radnoVreme">Radno vreme</div>
+                 <div class="status">otvoreno</div>
+                 <div class="labInfoRadnoVremeDetalji">
+                   <p class="daysInWeek text-center">P<span>08:00 - 21:00</span></p>
+                   <p class="daysInWeek text-center">U<span>08:00 - 21:00</span></p>
+                   <p class="daysInWeek text-center">S<span>08:00 - 21:00</span></p>
+                   <p class="daysInWeek text-center active">Č<span>08:00 - 21:00</span></p>
+                   <p class="daysInWeek text-center">P<span>08:00 - 21:00</span></p>
+                   <p class="daysInWeek text-center">S<span>08:00 - 21:00</span></p>
+                   <p class="daysInWeek text-center">N<span>08:00 - 21:00</span></p>
+
+                 </div>
+              </div>
+              <button type="button" class="btn btn-block btnLabDetails mt-2">saznaj više</button>
+           </div>
+           <div class="lab-card ">
+             <div>
+                <img src="images/osiguranje.svg" class="labInfoWindowOsiguranje" title="privatno osiguranje">
+                <img src="images/verified.svg" class="labInfoWindowVerified" title="akreditovana laboratorija">
+                <span class="labInfoWindowTitle">Beolab</span>
+            </div>
+              <div class="labInfoWindow">
+                  <img src="images/placeholder.svg" class="labLogoInfoWindow">
+                  <p class="labInfoWindowAdresa">Ljube Nešića bb </p>
+                  <p class="labInfoWindowGrad">Beograd - Vidikovac</p>
+                  <p class="labInfoWindowTelefoni">011/7886742, 064/1234567</p>
+              </div>
+              <div class="labInfoFooter">
+                  <img src="images/radnoVreme_black.svg" class="labInfoWindowWorkingHoursIcon">
+                  <div class="radnoVreme">Radno vreme</div>
+                  <div class="status">otvoreno</div>
+                  <div class="labInfoRadnoVremeDetalji">
+                    <p class="daysInWeek text-center">P<span>08:00 - 21:00</span></p>
+                    <p class="daysInWeek text-center">U<span>08:00 - 21:00</span></p>
+                    <p class="daysInWeek text-center">S<span>08:00 - 21:00</span></p>
+                    <p class="daysInWeek text-center active">Č<span>08:00 - 21:00</span></p>
+                    <p class="daysInWeek text-center">P<span>08:00 - 21:00</span></p>
+                    <p class="daysInWeek text-center">S<span>08:00 - 21:00</span></p>
+                    <p class="daysInWeek text-center">N<span>08:00 - 21:00</span></p>
+
+                  </div>
+               </div>
+               <button type="button" class="btn btn-block btnLabDetails mt-2">saznaj više</button>
+            </div>
+          <div class="lab-card ">
+            <div>
+               <img src="images/osiguranje.svg" class="labInfoWindowOsiguranje" title="privatno osiguranje">
+               <img src="images/verified.svg" class="labInfoWindowVerified" title="akreditovana laboratorija">
+               <span class="labInfoWindowTitle">Beolab</span>
+           </div>
+             <div class="labInfoWindow">
+                 <img src="images/placeholder.svg" class="labLogoInfoWindow">
+                 <p class="labInfoWindowAdresa">Ljube Nešića bb </p>
+                 <p class="labInfoWindowGrad">Beograd - Vidikovac</p>
+                 <p class="labInfoWindowTelefoni">011/7886742, 064/1234567</p>
+             </div>
+             <div class="labInfoFooter">
+                 <img src="images/radnoVreme_black.svg" class="labInfoWindowWorkingHoursIcon">
+                 <div class="radnoVreme">Radno vreme</div>
+                 <div class="status">otvoreno</div>
+                 <div class="labInfoRadnoVremeDetalji">
+                   <p class="daysInWeek text-center">P<span>08:00 - 21:00</span></p>
+                   <p class="daysInWeek text-center">U<span>08:00 - 21:00</span></p>
+                   <p class="daysInWeek text-center">S<span>08:00 - 21:00</span></p>
+                   <p class="daysInWeek text-center active">Č<span>08:00 - 21:00</span></p>
+                   <p class="daysInWeek text-center">P<span>08:00 - 21:00</span></p>
+                   <p class="daysInWeek text-center">S<span>08:00 - 21:00</span></p>
+                   <p class="daysInWeek text-center">N<span>08:00 - 21:00</span></p>
+
+                 </div>
+              </div>
+              <button type="button" class="btn btn-block btnLabDetails mt-2">saznaj više</button>
+
+           </div>
+
+           <div class="lab-card ">
+              <div>
+                 <img src="images/osiguranje.svg" class="labInfoWindowOsiguranje" title="privatno osiguranje">
+                 <img src="images/verified.svg" class="labInfoWindowVerified" title="akreditovana laboratorija">
+                 <span class="labInfoWindowTitle">Beolab</span>
+             </div>
+               <div class="labInfoWindow">
+                   <img src="images/placeholder.svg" class="labLogoInfoWindow">
+                   <p class="labInfoWindowAdresa">Ljube Nešića bb </p>
+                   <p class="labInfoWindowGrad">Beograd - Vidikovac</p>
+                   <p class="labInfoWindowTelefoni">011/7886742, 064/1234567</p>
+               </div>
+               <div class="labInfoFooter">
+                   <img src="images/radnoVreme_black.svg" class="labInfoWindowWorkingHoursIcon">
+                   <div class="radnoVreme">Radno vreme</div>
+                   <div class="status">otvoreno</div>
+                   <div class="labInfoRadnoVremeDetalji">
+                     <p class="daysInWeek text-center">P<span>08:00 - 21:00</span></p>
+                     <p class="daysInWeek text-center">U<span>08:00 - 21:00</span></p>
+                     <p class="daysInWeek text-center">S<span>08:00 - 21:00</span></p>
+                     <p class="daysInWeek text-center active">Č<span>08:00 - 21:00</span></p>
+                     <p class="daysInWeek text-center">P<span>08:00 - 21:00</span></p>
+                     <p class="daysInWeek text-center">S<span>08:00 - 21:00</span></p>
+                     <p class="daysInWeek text-center">N<span>08:00 - 21:00</span></p>
+
+                   </div>
+                </div>
+                <button type="button" class="btn btn-block btnLabDetails mt-2">saznaj više</button>
+             </div>
+
+              <div class="lab-card ">
+                <div>
+                   <img src="images/osiguranje.svg" class="labInfoWindowOsiguranje" title="privatno osiguranje">
+                   <img src="images/verified.svg" class="labInfoWindowVerified" title="akreditovana laboratorija">
+                   <span class="labInfoWindowTitle">Beolab</span>
+                </div>
+                <div class="labInfoWindow">
+                     <img src="images/placeholder.svg" class="labLogoInfoWindow">
+                     <p class="labInfoWindowAdresa">Ljube Nešića bb </p>
+                     <p class="labInfoWindowGrad">Beograd - Vidikovac</p>
+                     <p class="labInfoWindowTelefoni">011/7886742, 064/1234567</p>
+                </div>
+                <div class="labInfoFooter">
+                   <img src="images/radnoVreme_black.svg" class="labInfoWindowWorkingHoursIcon">
+                   <div class="radnoVreme">Radno vreme</div>
+                   <div class="status">otvoreno</div>
+                   <div class="labInfoRadnoVremeDetalji">
+                     <p class="daysInWeek text-center">P<span>08:00 - 21:00</span></p>
+                     <p class="daysInWeek text-center">U<span>08:00 - 21:00</span></p>
+                     <p class="daysInWeek text-center">S<span>08:00 - 21:00</span></p>
+                     <p class="daysInWeek text-center active">Č<span>08:00 - 21:00</span></p>
+                     <p class="daysInWeek text-center">P<span>08:00 - 21:00</span></p>
+                     <p class="daysInWeek text-center">S<span>08:00 - 21:00</span></p>
+                     <p class="daysInWeek text-center">N<span>08:00 - 21:00</span></p>
+                   </div>
+                </div>
+                <button type="button" class="btn btn-block btnLabDetails mt-2">saznaj više</button>
+              </div>
+
+              <div class="lab-card ">
+                <div>
+                   <img src="images/osiguranje.svg" class="labInfoWindowOsiguranje" title="privatno osiguranje">
+                   <img src="images/verified.svg" class="labInfoWindowVerified" title="akreditovana laboratorija">
+                   <span class="labInfoWindowTitle">Konzilijum</span>
+                </div>
+                <div class="labInfoWindow">
+                     <img src="images/placeholder.svg" class="labLogoInfoWindow">
+                     <p class="labInfoWindowAdresa">Bulevar Arsenija Čarnojevića 124a </p>
+                     <p class="labInfoWindowGrad">Beograd - Novi Beograd</p>
+                     <p class="labInfoWindowTelefoni">011/7886742, 064/1234567</p>
+                </div>
+                <div class="labInfoFooter">
+                   <img src="images/radnoVreme_black.svg" class="labInfoWindowWorkingHoursIcon">
+                   <div class="radnoVreme">Radno vreme</div>
+                   <div class="status">otvoreno</div>
+                   <div class="labInfoRadnoVremeDetalji">
+                     <p class="daysInWeek text-center text-right">Pondeljak<span>08:00 - 21:00</span></p>
+                     <p class="daysInWeek text-center text-right">Utorak<span>08:00 - 21:00</span></p>
+                     <p class="daysInWeek text-center">Sreda<span>08:00 - 21:00</span></p>
+                     <p class="daysInWeek text-center active">Četvrtak<span>08:00 - 21:00</span></p>
+                     <p class="daysInWeek text-center">Petak<span>08:00 - 21:00</span></p>
+                     <p class="daysInWeek text-center">Subota<span>08:00 - 21:00</span></p>
+                     <p class="daysInWeek text-center">Nedelja<span>08:00 - 21:00</span></p>
+                   </div>
+                </div>
+                <button type="button" class="btn btn-block btnLabDetails mt-2">saznaj više</button>
+              </div>
+              <div class="lab-card ">
+                <div>
+                   <img src="images/osiguranje.svg" class="labInfoWindowOsiguranje" title="privatno osiguranje">
+                   <img src="images/verified.svg" class="labInfoWindowVerified" title="akreditovana laboratorija">
+                   <span class="labInfoWindowTitle">Beolab</span>
+                </div>
+                <div class="labInfoWindow">
+                     <img src="images/placeholder.svg" class="labLogoInfoWindow">
+                     <p class="labInfoWindowAdresa">Ljube Nešića bb </p>
+                     <p class="labInfoWindowGrad">Beograd - Vidikovac</p>
+                     <p class="labInfoWindowTelefoni">011/7886742</p>
+                </div>
+                <div class="labInfoFooter">
+                   <img src="images/radnoVreme_black.svg" class="labInfoWindowWorkingHoursIcon">
+                   <div class="radnoVreme">Radno vreme</div>
+                   <div class="status">otvoreno</div>
+                   <div class="labInfoRadnoVremeDetalji">
+                     <p class="daysInWeek text-center">P<span>08:00 - 21:00</span></p>
+                     <p class="daysInWeek text-center">U<span>08:00 - 21:00</span></p>
+                     <p class="daysInWeek text-center">S<span>08:00 - 21:00</span></p>
+                     <p class="daysInWeek text-center">Č<span>08:00 - 21:00</span></p>
+                     <p class="daysInWeek text-center">P<span>08:00 - 21:00</span></p>
+                     <p class="daysInWeek text-center active">S<span>08:00 - 21:00</span></p>
+                     <p class="daysInWeek text-center">N<span>08:00 - 21:00</span></p>
+                   </div>
+                </div>
+                <button type="button" class="btn btn-block btnLabDetails mt-2">saznaj više</button>
+              </div>
+    </div><!-- d-flex end -->
+  </div><!-- row end -->
+</div> <!-- container end -->
+</section><!-- labDetails end -->
 
 
 <footer>
@@ -182,14 +448,12 @@ $(document).ready(function(){
         $('.num').addClass('numOn');
         $(".num").numScroll({
           time:5000
-      });
-    }
-    // else {
-    //   $('.num').removeClass('numOn');
-    // }
+        });
+      }
     },
     offset: '94%'
   });
+
 });
 
 
@@ -584,6 +848,6 @@ $(document).ready(function(){
 <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTj52J6A1dcfdJzqHErFGR_IDs6ahyTes&callback=initMap"
   type="text/javascript"></script>
-
+<script type="text/javascript" src="../production/js/slick.js"></script>
 </body>
 </html>
