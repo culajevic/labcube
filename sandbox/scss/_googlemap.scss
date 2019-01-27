@@ -4,9 +4,10 @@
 }
 
 #map {
-  height: 790px;
+  height: 720px;
+  min-height: calc(100vh - 210px);
+  position: relative;
 }
-
 
 // google map header
 .labinfo  {
@@ -142,20 +143,32 @@
   float:left;
 }
 
-.labInfoWindowVerified {
-  padding-right: px-to-rem(12px);
+.labInfoWindowOsiguranje{
+  padding-right: 4px;
   margin-bottom: px-to-rem(6px);
+  display: inline-block;
+}
+
+.labInfoWindowVerified {
+  padding-right: px-to-rem(6px);
+  @extend .labInfoWindowOsiguranje;
 }
 
 .labLogoInfoWindow {
   height: px-to-rem(53px);
   width: px-to-rem(48px);
   float:left;
+  margin-top: 2px;
   margin-right: px-to-rem(8px);
+  margin-bottom: px-to-rem(8px);
 }
 
 .labInfoWindowContactGroup {
   margin-top:px-to-rem(8px);
+}
+
+.labInfoWindow {
+  flex:1 1 0;
 }
 
 .labInfoWindowAdresa,
